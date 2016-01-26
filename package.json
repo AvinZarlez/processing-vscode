@@ -1,0 +1,33 @@
+{
+	"name": "language-pde",
+	"displayName": "Processing Language",
+	"description": "Processing Language Support for VSCode",
+	"version": "0.0.1",
+	"publisher": "Tobiah",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages",
+		"Snippets"
+	],
+	"contributes": {
+		"languages": [{
+			"id": "pde",
+			"aliases": ["Processing", "pde"],
+			"extensions": [".pde",".java"],
+			"configuration": "./pde.configuration.json"
+		}],
+		"grammars": [{
+			"language": "pde",
+			"scopeName": "source.pde",
+			"path": "./syntaxes/pde.tmLanguage"
+		}],
+		"snippets": [
+			{
+				"language": "pde",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	}
+}

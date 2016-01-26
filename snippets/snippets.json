@@ -1,0 +1,1880 @@
+{
+	"@": {
+		"prefix": "@",
+		"body": "@param  ${1:parameter}  ${2:description}",
+		"description": "@param",
+		"scope": "source.pde"
+	},
+	"@1": {
+		"prefix": "@",
+		"body": "@private",
+		"description": "@private",
+		"scope": "source.pde"
+	},
+	"@2": {
+		"prefix": "@",
+		"body": "@private",
+		"description": "@public",
+		"scope": "source.pde"
+	},
+	"@3": {
+		"prefix": "@",
+		"body": "@return  ${1:parameter}  ${2:description}",
+		"description": "@return",
+		"scope": "source.pde"
+	},
+	"abs": {
+		"prefix": "abs",
+		"body": "abs(${1:value});",
+		"description": "abs",
+		"scope": "source.pde"
+	},
+	"acos": {
+		"prefix": "acos",
+		"body": "acos(${1:value});",
+		"description": "acos",
+		"scope": "source.pde"
+	},
+	"alpha": {
+		"prefix": "alpha",
+		"body": "alpha(${1:color});",
+		"description": "alpha",
+		"scope": "source.pde"
+	},
+	"material": {
+		"prefix": "material",
+		"body": "ambient(${8:${3:value1}, ${4:value2}, ${5:value3}});",
+		"description": "ambient",
+		"scope": "source.pde"
+	},
+	"light": {
+		"prefix": "light",
+		"body": "ambientLight(${1:v1}, ${2:v2}, ${3:v3}${7:, ${4:x}, ${5:y}, ${6:z}});",
+		"description": "ambientLight",
+		"scope": "source.pde"
+	},
+	"append": {
+		"prefix": "append",
+		"body": "append(${1:array}, ${2:element});",
+		"description": "append",
+		"scope": "source.pde"
+	},
+	"arc": {
+		"prefix": "arc",
+		"body": "arc(${1:x}, ${2:y}, ${3:width}, ${4:height}, ${5:start}, ${6:stop});",
+		"description": "arc",
+		"scope": "source.pde"
+	},
+	"array": {
+		"prefix": "array",
+		"body": "${1:int}[] ${2:numbers} ${6:= new $1[${3:length}]};",
+		"description": "Array",
+		"scope": "source.pde"
+	},
+	"arraycopy": {
+		"prefix": "arraycopy",
+		"body": "arrayCopy(${1:src}, ${2:dest}, ${4:, ${3:length}});",
+		"description": "arrayCopy",
+		"scope": "source.pde"
+	},
+	"arraylist": {
+		"prefix": "arraylist",
+		"body": "ArrayList<${1:String}> ${2:arraylist} = new ArrayList<$1>();",
+		"description": "ArrayList",
+		"scope": "source.pde"
+	},
+	"asin": {
+		"prefix": "asin",
+		"body": "asin(${1:value});",
+		"description": "asin",
+		"scope": "source.pde"
+	},
+	"atan": {
+		"prefix": "atan",
+		"body": "atan(${1:value});",
+		"description": "atan",
+		"scope": "source.pde"
+	},
+	"atan2": {
+		"prefix": "atan2",
+		"body": "atan2(${1:y},${2:x});",
+		"description": "atan2",
+		"scope": "source.pde"
+	},
+	"background": {
+		"prefix": "background",
+		"body": "background(${1:grey}, ${2:alpha});",
+		"description": "background grey alpha",
+		"scope": "source.pde"
+	},
+	"background1": {
+		"prefix": "background",
+		"body": "background(${1:grey});",
+		"description": "background grey",
+		"scope": "source.pde"
+	},
+	"background2": {
+		"prefix": "background",
+		"body": "background(${1:red}, ${2:green}, ${3:blue});",
+		"description": "background rgb",
+		"scope": "source.pde"
+	},
+	"background3": {
+		"prefix": "background",
+		"body": "background(${1:red}, ${2:green}, ${3:blue}, ${6:alpha});",
+		"description": "background rgba",
+		"scope": "source.pde"
+	},
+	"background4": {
+		"prefix": "background",
+		"body": "background(${8:${3:value1}, ${4:value2}, ${5:value3}${7:, ${6:alpha}}});",
+		"description": "background",
+		"scope": "source.pde"
+	},
+	"camera": {
+		"prefix": "camera",
+		"body": "beginCamera();",
+		"description": "beginCamera",
+		"scope": "source.pde"
+	},
+	"begingl": {
+		"prefix": "begingl",
+		"body": "pgl.beginGL();\n$1\npgl.endGL();",
+		"description": "beginGL",
+		"scope": "source.pde"
+	},
+	"file": {
+		"prefix": "file",
+		"body": "beginRecord(${1:renderer}, ${2:filename});",
+		"description": "beginRecord",
+		"scope": "source.pde"
+	},
+	"beginshape": {
+		"prefix": "beginshape",
+		"body": "beginShape(${1:kind});",
+		"description": "beginShape",
+		"scope": "source.pde"
+	},
+	"bezier": {
+		"prefix": "bezier",
+		"body": "bezier(${1:x1}, ${2:y1}, ${3:cx1}, ${4:cy1}, ${5:cx2}, ${6:cy2}, ${7:x2}, ${8:y2});",
+		"description": "bezier",
+		"scope": "source.pde"
+	},
+	"bezier1": {
+		"prefix": "bezier",
+		"body": "bezier(${1:x1}, ${2:y1}, ${3:z1}, ${4:cx1}, ${5:cy1}, ${6:cz1}, ${7:cx2}, ${8:cy2}, ${9:cz2}, ${10:x2}, ${11:y2}, ${12:z2});",
+		"description": "bezier3D",
+		"scope": "source.pde"
+	},
+	"bezier2": {
+		"prefix": "bezier",
+		"body": "bezierDetail(${1:detail});",
+		"description": "bezierDetail",
+		"scope": "source.pde"
+	},
+	"bezier3": {
+		"prefix": "bezier",
+		"body": "bezierPoint(${1:a}, ${1:b}, ${1:c}, ${1:d}, ${1:t});",
+		"description": "bezierPoint",
+		"scope": "source.pde"
+	},
+	"bezier4": {
+		"prefix": "bezier",
+		"body": "bezierTangent(${1:a}, ${1:b}, ${1:c}, ${1:d}, ${1:t});",
+		"description": "bezierTangent",
+		"scope": "source.pde"
+	},
+	"beziervertex": {
+		"prefix": "beziervertex",
+		"body": "bezierVertex(${1:cx1}, ${2:cy1}, ${3:cz1}, ${4:cx2}, ${5:cy2}, ${6:cz2}, ${7:x}, ${8:y}, ${9:z});",
+		"description": "bezierVertex 3D",
+		"scope": "source.pde"
+	},
+	"beziervertex1": {
+		"prefix": "beziervertex",
+		"body": "bezierVertex(${1:cx1}, ${2:cy1}, ${3:cx2}, ${4:cy2}, ${5:x}, ${6:y});",
+		"description": "bezierVertex",
+		"scope": "source.pde"
+	},
+	"binary": {
+		"prefix": "binary",
+		"body": "binary(${3:value}${5:, ${4:digits}});",
+		"description": "binary",
+		"scope": "source.pde"
+	},
+	"blue": {
+		"prefix": "blue",
+		"body": "blue(${1:color});",
+		"description": "blue",
+		"scope": "source.pde"
+	},
+	"boolean": {
+		"prefix": "boolean",
+		"body": "boolean ${1:b} ${6:= ${3:true}};",
+		"description": "boolean",
+		"scope": "source.pde"
+	},
+	"box": {
+		"prefix": "box",
+		"body": "box(${4:${1:width}, ${2:height}, ${3:depth}});",
+		"description": "box",
+		"scope": "source.pde"
+	},
+	"break": {
+		"prefix": "break",
+		"body": "break ${1:label};",
+		"description": "break",
+		"scope": "source.pde"
+	},
+	"brightness": {
+		"prefix": "brightness",
+		"body": "brightness(${1:color});",
+		"description": "brightness",
+		"scope": "source.pde"
+	},
+	"byte": {
+		"prefix": "byte",
+		"body": "byte ${1:b} ${6:= ${3:127}};",
+		"description": "byte",
+		"scope": "source.pde"
+	},
+	"camera1": {
+		"prefix": "camera",
+		"body": "camera(${10:${1:eyeX}, ${2:eyeY}, ${3:eyeZ}, ${4:centerX}, ${5:centerY}, ${6:centerZ}, ${7:upX}, ${8:upY}, ${9:upZ}});",
+		"description": "camera",
+		"scope": "source.pde"
+	},
+	"case": {
+		"prefix": "case",
+		"body": "case ${1:expression} :\n\t$0\nbreak;\t",
+		"description": "case",
+		"scope": "source.pde"
+	},
+	"catch": {
+		"prefix": "catch",
+		"body": "catch (${1:Exception} e) {\n\t$0\n}",
+		"description": "catch",
+		"scope": "source.pde"
+	},
+	"ceil": {
+		"prefix": "ceil",
+		"body": "ceil(${1:value});",
+		"description": "ceil",
+		"scope": "source.pde"
+	},
+	"char": {
+		"prefix": "char",
+		"body": "char ${1:m} ${6:= \"${3:char}\"};",
+		"description": "char",
+		"scope": "source.pde"
+	},
+	"class": {
+		"prefix": "class",
+		"body": "${1:public }class ${2:${TM_FILENAME/(.*?)(\\..+)/$1/}} ${3:extends} {\n\n\tpublic $2 (${4:arguments}) {\n\t\t${0}\n\t}\n\n}\n",
+		"description": "class",
+		"scope": "source.pde"
+	},
+	"color": {
+		"prefix": "color",
+		"body": "color ${1:c} ${6:= color(${3:value1}, ${4:value2}, ${5:value3})};",
+		"description": "color",
+		"scope": "source.pde"
+	},
+	"concat": {
+		"prefix": "concat",
+		"body": "concat(${1:array1}, ${2:array2});",
+		"description": "concat",
+		"scope": "source.pde"
+	},
+	"const": {
+		"prefix": "const",
+		"body": "static final ${1:Object} ${2:VAR_NAM} = $0;",
+		"description": "const",
+		"scope": "source.pde"
+	},
+	"constrain": {
+		"prefix": "constrain",
+		"body": "constrain(${1:value}, ${2:min}, ${3:max});",
+		"description": "constrain",
+		"scope": "source.pde"
+	},
+	"copy": {
+		"prefix": "copy",
+		"body": "copy(${10:${9:srcImg}, }${1:x}, ${2:y}, ${3:width}, ${4:height}, ${5:dx}, ${6:dy}, ${7:dwidth}, ${8:dheight});",
+		"description": "copy",
+		"scope": "source.pde"
+	},
+	"cos": {
+		"prefix": "cos",
+		"body": "cos(${1:rad});",
+		"description": "cos",
+		"scope": "source.pde"
+	},
+	"file1": {
+		"prefix": "file",
+		"body": "createReader(${1:filename});",
+		"description": "createReader",
+		"scope": "source.pde"
+	},
+	"createshape": {
+		"prefix": "createshape",
+		"body": "createShape(${1:type});",
+		"description": "createShape",
+		"scope": "source.pde"
+	},
+	"file2": {
+		"prefix": "file",
+		"body": "createWriter(${1:filename});",
+		"description": "createWriter",
+		"scope": "source.pde"
+	},
+	"curve": {
+		"prefix": "curve",
+		"body": "curve(${1:x1}, ${2:y1}, ${3:z1}, ${4:x2}, ${5:y2}, ${6:z2}, ${7:x3}, ${8:y3}, ${9:z3}, ${10:x4}, ${11:y4}, ${12:z4});",
+		"description": "curve 3D",
+		"scope": "source.pde"
+	},
+	"curve1": {
+		"prefix": "curve",
+		"body": "curve(${1:x1}, ${2:y1}, ${3:x2}, ${4:y2}, ${5:x3}, ${6:y3}, ${7:x4}, ${8:y4});",
+		"description": "curve",
+		"scope": "source.pde"
+	},
+	"curve2": {
+		"prefix": "curve",
+		"body": "curveDetail(${1:detail});",
+		"description": "curveDetail",
+		"scope": "source.pde"
+	},
+	"curve3": {
+		"prefix": "curve",
+		"body": "curvePoint(${1:a}, ${1:b}, ${1:c}, ${1:d}, ${1:t});",
+		"description": "curvePoint",
+		"scope": "source.pde"
+	},
+	"curve4": {
+		"prefix": "curve",
+		"body": "curveTightness(${1:squishy});",
+		"description": "curveTightness",
+		"scope": "source.pde"
+	},
+	"curveVertex": {
+		"prefix": "curveVertex",
+		"body": "curveVertex(${1:x}, ${2:y}, ${3:z});",
+		"description": "curveVertex 3D",
+		"scope": "source.pde"
+	},
+	"curveVertex1": {
+		"prefix": "curveVertex",
+		"body": "curveVertex(${1:x}, ${2:y});",
+		"description": "curveVertex",
+		"scope": "source.pde"
+	},
+	"default": {
+		"prefix": "default",
+		"body": "default :\n\t$0\nbreak;\t",
+		"description": "default",
+		"scope": "source.pde"
+	},
+	"degrees": {
+		"prefix": "degrees",
+		"body": "degrees(${1:rad});",
+		"description": "degrees",
+		"scope": "source.pde"
+	},
+	"light1": {
+		"prefix": "light",
+		"body": "directionalLight(${1:v1}, ${2:v2}, ${3:v3}, ${4:nx}, ${5:ny}, ${6:nz});",
+		"description": "directionalLight",
+		"scope": "source.pde"
+	},
+	"dist": {
+		"prefix": "dist",
+		"body": "dist(${1:x1}, ${2:y1}, ${3:z1}, ${4:x2}, ${5:y2}, ${6:z2});",
+		"description": "dist 3D",
+		"scope": "source.pde"
+	},
+	"dist1": {
+		"prefix": "dist",
+		"body": "dist(${1:x1}, ${2:y1}, ${4:x2}, ${5:y2});",
+		"description": "dist",
+		"scope": "source.pde"
+	},
+	"doc": {
+		"prefix": "doc",
+		"body": "/**\n *  ${1:Description}\n *\n *\t@author ${2:$TM_FULLNAME}\n *\t@since  ${3:`date +%d.%m.%Y`}\n */",
+		"description": "doc - class",
+		"scope": "source.pde"
+	},
+	"doc1": {
+		"prefix": "doc",
+		"body": "/**\n *\t${1:@private}$0\n */",
+		"description": "doc - comment",
+		"scope": "source.pde"
+	},
+	"ellipse": {
+		"prefix": "ellipse",
+		"body": "ellipse(${1:x}, ${2:y}, ${3:width}, ${4:height});",
+		"description": "ellipse",
+		"scope": "source.pde"
+	},
+	"ellipseMode": {
+		"prefix": "ellipseMode",
+		"body": "ellipseMode(${1:CENTER});",
+		"description": "ellipseMode",
+		"scope": "source.pde"
+	},
+	"else": {
+		"prefix": "else",
+		"body": "else if ($1) {\n\t$0\n}",
+		"description": "else if",
+		"scope": "source.pde"
+	},
+	"else1": {
+		"prefix": "else",
+		"body": "else {\n\t$0\n}",
+		"description": "else",
+		"scope": "source.pde"
+	},
+	"material1": {
+		"prefix": "material",
+		"body": "emissive(${8:${3:value1}, ${4:value2}, ${5:value3}});",
+		"description": "emissive",
+		"scope": "source.pde"
+	},
+	"camera2": {
+		"prefix": "camera",
+		"body": "endCamera();",
+		"description": "endCamera",
+		"scope": "source.pde"
+	},
+	"file3": {
+		"prefix": "file",
+		"body": "endRecord();",
+		"description": "endRecord",
+		"scope": "source.pde"
+	},
+	"endshape": {
+		"prefix": "endshape",
+		"body": "endShape(${1:mode});",
+		"description": "endShape",
+		"scope": "source.pde"
+	},
+	"exp": {
+		"prefix": "exp",
+		"body": "exp(${1:value});",
+		"description": "exp",
+		"scope": "source.pde"
+	},
+	"expand": {
+		"prefix": "expand",
+		"body": "expand(${1:array}${3:, ${2:newSize}});",
+		"description": "expand",
+		"scope": "source.pde"
+	},
+	"fill": {
+		"prefix": "fill",
+		"body": "fill(${1:grey}, ${2:alpha});",
+		"description": "fill grey alpha",
+		"scope": "source.pde"
+	},
+	"fill1": {
+		"prefix": "fill",
+		"body": "fill(${1:grey});",
+		"description": "fill grey",
+		"scope": "source.pde"
+	},
+	"fill2": {
+		"prefix": "fill",
+		"body": "fill(${1:red}, ${2:green}, ${3:blue});",
+		"description": "fill rgb",
+		"scope": "source.pde"
+	},
+	"fill3": {
+		"prefix": "fill",
+		"body": "fill(${1:red}, ${2:green}, ${3:blue}, ${6:alpha});",
+		"description": "fill rgba",
+		"scope": "source.pde"
+	},
+	"fill4": {
+		"prefix": "fill",
+		"body": "fill(${8:${3:value1}, ${4:value2}, ${5:value3}${7:, ${6:alpha}}});",
+		"description": "fill",
+		"scope": "source.pde"
+	},
+	"float": {
+		"prefix": "float",
+		"body": "float ${1:f} ${6:= ${3:0.0}};",
+		"description": "float",
+		"scope": "source.pde"
+	},
+	"floor": {
+		"prefix": "floor",
+		"body": "floor(${1:value});",
+		"description": "floor",
+		"scope": "source.pde"
+	},
+	"focused": {
+		"prefix": "focused",
+		"body": "focused",
+		"description": "focused",
+		"scope": "source.pde"
+	},
+	"for": {
+		"prefix": "for",
+		"body": "for (${1:Object} ${2:o} : ${3:array}) {\n\t$0\n}",
+		"description": "for in",
+		"scope": "source.pde"
+	},
+	"for1": {
+		"prefix": "for",
+		"body": "for (int ${1:i} = ${2:0}; ${1:i} < ${3:len}; ++${1:i}) {\n\t$0\n}",
+		"description": "for",
+		"scope": "source.pde"
+	},
+	"framerate": {
+		"prefix": "framerate",
+		"body": "frameCount",
+		"description": "frameCount",
+		"scope": "source.pde"
+	},
+	"framerate1": {
+		"prefix": "framerate",
+		"body": "frameRate",
+		"description": "frameRate (debug)",
+		"scope": "source.pde"
+	},
+	"framerate2": {
+		"prefix": "framerate",
+		"body": "frameRate($0);",
+		"description": "frameRate (set)",
+		"scope": "source.pde"
+	},
+	"camera3": {
+		"prefix": "camera",
+		"body": "frustrum(${7:${1:left}, ${2:right}, ${3:bottom}, ${4:top}, ${5:near}, ${6:far}});",
+		"description": "frustum",
+		"scope": "source.pde"
+	},
+	"function": {
+		"prefix": "function",
+		"body": "${1:void} ${2:name}($3) {\n\t$0${1/void$|(.+)/(?1:return null;)/}\n}",
+		"description": "function",
+		"scope": "source.pde"
+	},
+	"get": {
+		"prefix": "get",
+		"body": "get(${6:${1:x}, ${2:y}${5:, ${3:width}, ${4:height}}});",
+		"description": "get pixel",
+		"scope": "source.pde"
+	},
+	"get1": {
+		"prefix": "get",
+		"body": "public ${1:String} get${2/./\\u$0/}() {\n    return ${2:fieldName};\n}\n",
+		"description": "get",
+		"scope": "source.pde"
+	},
+	"glbindbuffer": {
+		"prefix": "glbindbuffer",
+		"body": "${2:// A buffer ID of zero unbinds a buffer object}\ngl.glBindBuffer(GL.GL_ARRAY_BUFFER, ${1:0});",
+		"description": "glBindBuffer",
+		"scope": "source.pde"
+	},
+	"glcalllist": {
+		"prefix": "glcalllist",
+		"body": "// execute a display list\ngl.glCallList(${1:list});",
+		"description": "glCallList",
+		"scope": "source.pde"
+	},
+	"glclear": {
+		"prefix": "glclear",
+		"body": "gl.glClear(${1:GL.GL_COLOR_BUFFER_BIT}${3: | ${2:GL.GL_DEPTH_BUFFER_BIT}});",
+		"description": "glClear",
+		"scope": "source.pde"
+	},
+	"glclearcolor": {
+		"prefix": "glclearcolor",
+		"body": "gl.glClearColor(${1:red}, ${2:green}, ${3:blue}, ${4:alpha});",
+		"description": "glClearColor",
+		"scope": "source.pde"
+	},
+	"glcolor3f": {
+		"prefix": "glcolor3f",
+		"body": "gl.glColor3f(${1:red}, ${2:green}, ${3:blue});",
+		"description": "glColor3f",
+		"scope": "source.pde"
+	},
+	"glcolor4f": {
+		"prefix": "glcolor4f",
+		"body": "gl.glColor4f(${1:red}, ${2:green}, ${3:blue}, ${4:alpha});",
+		"description": "glColor4f",
+		"scope": "source.pde"
+	},
+	"gldeletebuffers": {
+		"prefix": "gldeletebuffers",
+		"body": "${3:// Parameters are the same for glGenBuffers}\ngl.glDeleteBuffers(${1:4}, ${2:bufferObjects});",
+		"description": "glDeleteBuffers",
+		"scope": "source.pde"
+	},
+	"gldepthmask": {
+		"prefix": "gldepthmask",
+		"body": "// enable or disable writing into the depth buffer\ngl.glDepthMask(${1:flag});",
+		"description": "glDepthMask",
+		"scope": "source.pde"
+	},
+	"glflush": {
+		"prefix": "glflush",
+		"body": "// Empties buffers. Call this when all previous issues commands completed\ngl.glFlush();",
+		"description": "glFlush",
+		"scope": "source.pde"
+	},
+	"glgenbuffers": {
+		"prefix": "glgenbuffers",
+		"body": "// import java.nio.IntBuffer;\n// import java.nio.FloatBuffer;\n// import com.sun.opengl.util.BufferUtil;\n\n// You might need to create four buffers to store vertext data, normal data, texture coordinate data, and indices in vertex arrays\nIntBuffer bufferObjects = IntBuffer.allocate(${1:4}); \ngl.glGenBuffers($1, bufferObjects);\n\nint vertexCount = ${2:3};\nint numCoordinates = ${3:3};\n// vertexCount * numCoordinates\nFloatBuffer vertices = BufferUtil.newFloatBuffer(vertexCount * numCoordinates);\nfloat[] v = {0.0f, 0.0f, 0.0f,\n             1.0f, 0.0f, 0.0f,\n             0.0f, 1.0f, 1.0f};\nvertices.put(v);\n\n// Bind the first buffer object ID for use with vertext array data\ngl.glBindBuffer(GL.GL_ARRAY_BUFFER, bufferObjects.get(0));\ngl.glBufferData(GL.GL_ARRAY_BUFFER, vertexCount * numCoordinates * BufferUtil.SIZEOF_FLOAT, vertices, GL.GL_STATIC_DRAW);",
+		"description": "glGenBuffers",
+		"scope": "source.pde"
+	},
+	"glgenlists": {
+		"prefix": "glgenlists",
+		"body": "gl.glGenLists(${1:1})",
+		"description": "glGenLists",
+		"scope": "source.pde"
+	},
+	"glgeterror": {
+		"prefix": "glgeterror",
+		"body": "println(gl.glGetError());",
+		"description": "glGetError",
+		"scope": "source.pde"
+	},
+	"glloadidentity": {
+		"prefix": "glloadidentity",
+		"body": "// replaces the top of the active matrix stack with the identity matrix\ngl.glLoadIdentity();",
+		"description": "glLoadIdentity",
+		"scope": "source.pde"
+	},
+	"glpushmatrix": {
+		"prefix": "glpushmatrix",
+		"body": "// spush and pop the current matrix stack\ngl.glPushMatrix();\n$1\ngl.glPopMatrix();",
+		"description": "glPushMatrix",
+		"scope": "source.pde"
+	},
+	"glrotatef": {
+		"prefix": "glrotatef",
+		"body": "// rotation in degrees, x coordinate of a vector, y coord., z coord.\ngl.glRotatef(${1:deg}, ${2:x}, ${3:y}, ${4:z});",
+		"description": "glRotatef",
+		"scope": "source.pde"
+	},
+	"glscalef": {
+		"prefix": "glscalef",
+		"body": "// multiply the current matrix by a general scaling matrix\ngl.glScalef(${1:x}, ${2:y}, ${3:z});",
+		"description": "glScalef",
+		"scope": "source.pde"
+	},
+	"gltexcoord2f": {
+		"prefix": "gltexcoord2f",
+		"body": "// set the current texture coordinates - 2 floats\ngl.glTexCoord2f(${1:0.0f}, ${2:0.0f});",
+		"description": "glTexCoord2f",
+		"scope": "source.pde"
+	},
+	"gltranslatef": {
+		"prefix": "gltranslatef",
+		"body": "// multiply the current matrix by a translation matrix\ngl.glTranslatef(${1:x}, ${2:y}, ${3:z});",
+		"description": "glTranslatef",
+		"scope": "source.pde"
+	},
+	"glvertex2f": {
+		"prefix": "glvertex2f",
+		"body": "gl.glVertex2f(${1:0.0f}, ${2:0.0f});",
+		"description": "glVertex2f",
+		"scope": "source.pde"
+	},
+	"glvertex3f": {
+		"prefix": "glvertex3f",
+		"body": "gl.glVertex3f(${1:0.0f}, ${2:0.0f}, ${3:0.0f});",
+		"description": "glVertex3f",
+		"scope": "source.pde"
+	},
+	"green": {
+		"prefix": "green",
+		"body": "green(${1:color});",
+		"description": "green",
+		"scope": "source.pde"
+	},
+	"pi": {
+		"prefix": "pi",
+		"body": "HALF_PI",
+		"description": "HALF PI",
+		"scope": "source.pde"
+	},
+	"hex": {
+		"prefix": "hex",
+		"body": "hex(${3:c});",
+		"description": "hex",
+		"scope": "source.pde"
+	},
+	"time": {
+		"prefix": "time",
+		"body": "hour()",
+		"description": "hour",
+		"scope": "source.pde"
+	},
+	"hue": {
+		"prefix": "hue",
+		"body": "hue(${1:color});",
+		"description": "hue",
+		"scope": "source.pde"
+	},
+	"?": {
+		"prefix": "?",
+		"body": "? ${1:trueExpression} : ${2:falseExpression}$0",
+		"description": "?",
+		"scope": "source.pde"
+	},
+	"if": {
+		"prefix": "if",
+		"body": "if ($1) {\n\t$0\n}",
+		"description": "if",
+		"scope": "source.pde"
+	},
+	"image": {
+		"prefix": "image",
+		"body": "image(${1:img}, ${2:x}, ${3:y}${6:, ${4:width}, ${5:height}});",
+		"description": "image",
+		"scope": "source.pde"
+	},
+	"int": {
+		"prefix": "int",
+		"body": "int ${1:i} ${6:= ${3:0}};",
+		"description": "int",
+		"scope": "source.pde"
+	},
+	"join": {
+		"prefix": "join",
+		"body": "join(${3:strgArray}, ${4:seperator});",
+		"description": "join",
+		"scope": "source.pde"
+	},
+	"key": {
+		"prefix": "key",
+		"body": "key",
+		"description": "key",
+		"scope": "source.pde"
+	},
+	"key1": {
+		"prefix": "key",
+		"body": "keyCode",
+		"description": "keyCode",
+		"scope": "source.pde"
+	},
+	"key2": {
+		"prefix": "key",
+		"body": "keyPressed",
+		"description": "keyPressed",
+		"scope": "source.pde"
+	},
+	"key3": {
+		"prefix": "key",
+		"body": "void keyPressed() {\n\t${1}\n}",
+		"description": "keyPressed",
+		"scope": "source.pde"
+	},
+	"key4": {
+		"prefix": "key",
+		"body": "void keyReleased() {\n\t${1}\n}",
+		"description": "keyReleased",
+		"scope": "source.pde"
+	},
+	"key5": {
+		"prefix": "key",
+		"body": "void keyTyped() {\n\t${1}\n}",
+		"description": "keyTyped",
+		"scope": "source.pde"
+	},
+	"lerp": {
+		"prefix": "lerp",
+		"body": "lerp(${1:value1}, ${2:value2}, ${3:amt});",
+		"description": "lerp",
+		"scope": "source.pde"
+	},
+	"lerpcolor": {
+		"prefix": "lerpcolor",
+		"body": "lerpColor(${1:c1}, ${2:c2}, ${3:amt});",
+		"description": "lerpColor",
+		"scope": "source.pde"
+	},
+	"light2": {
+		"prefix": "light",
+		"body": "lightFalloff(${1:constant}, ${2:linear}, ${3:quadratic});",
+		"description": "lightFalloff",
+		"scope": "source.pde"
+	},
+	"light3": {
+		"prefix": "light",
+		"body": "lights();",
+		"description": "lights",
+		"scope": "source.pde"
+	},
+	"light4": {
+		"prefix": "light",
+		"body": "lightFalloff(${1:v1}, ${2:v2}, ${3:v3});",
+		"description": "lightSpecular",
+		"scope": "source.pde"
+	},
+	"line": {
+		"prefix": "line",
+		"body": "line(${1:x1}, ${2:y1}, ${3:z1}, ${4:x2}, ${5:y2}, ${6:z2});",
+		"description": "line 3d",
+		"scope": "source.pde"
+	},
+	"line1": {
+		"prefix": "line",
+		"body": "line(${1:x1}, ${2:y1}, ${3:x2}, ${4:y2});",
+		"description": "line",
+		"scope": "source.pde"
+	},
+	"link": {
+		"prefix": "link",
+		"body": "link(${1:url}${4:, ${3:target}});",
+		"description": "link",
+		"scope": "source.pde"
+	},
+	"load": {
+		"prefix": "load",
+		"body": "loadBytes(${2:\"${1:filename}\"});",
+		"description": "loadBytes",
+		"scope": "source.pde"
+	},
+	"font": {
+		"prefix": "font",
+		"body": "${1:font} = loadFont(${3:\"${2:FFScala-32.vlw}\"});",
+		"description": "loadFont",
+		"scope": "source.pde"
+	},
+	"loadimage": {
+		"prefix": "loadimage",
+		"body": "loadImage(${1:filename});",
+		"description": "loadImage",
+		"scope": "source.pde"
+	},
+	"loadpixels": {
+		"prefix": "loadpixels",
+		"body": "loadPixels();",
+		"description": "loadPixels",
+		"scope": "source.pde"
+	},
+	"loadshape": {
+		"prefix": "loadshape",
+		"body": "loadShape(${1:filename});",
+		"description": "loadShape",
+		"scope": "source.pde"
+	},
+	"load1": {
+		"prefix": "load",
+		"body": "loadStrings(${2:\"${1:filename}\"});",
+		"description": "loadStrings",
+		"scope": "source.pde"
+	},
+	"loadx": {
+		"prefix": "loadx",
+		"body": "loadXML(${2:\"${1:filename}\"});",
+		"description": "loadXML",
+		"scope": "source.pde"
+	},
+	"log": {
+		"prefix": "log",
+		"body": "log(${1:value});",
+		"description": "log",
+		"scope": "source.pde"
+	},
+	"mag": {
+		"prefix": "mag",
+		"body": "mag(${1:a}, ${2:b}${4:, ${3:c}});",
+		"description": "mag",
+		"scope": "source.pde"
+	},
+	"map": {
+		"prefix": "map",
+		"body": "map(${1:value}, ${2:low1}, ${4:high1}, ${5:low2}, ${6:high2});",
+		"description": "map",
+		"scope": "source.pde"
+	},
+	"match": {
+		"prefix": "match",
+		"body": "match(${3:str}, ${4:regexp});",
+		"description": "match",
+		"scope": "source.pde"
+	},
+	"max": {
+		"prefix": "max",
+		"body": "max(${1:array});",
+		"description": "max array",
+		"scope": "source.pde"
+	},
+	"max1": {
+		"prefix": "max",
+		"body": "max(${1:value1}, ${2:value2});",
+		"description": "max",
+		"scope": "source.pde"
+	},
+	"time1": {
+		"prefix": "time",
+		"body": "millis()",
+		"description": "millis",
+		"scope": "source.pde"
+	},
+	"min": {
+		"prefix": "min",
+		"body": "min(${1:array}};",
+		"description": "min array",
+		"scope": "source.pde"
+	},
+	"min1": {
+		"prefix": "min",
+		"body": "min(${1:value1}, ${2:value2}${4:, ${3:value3}});",
+		"description": "min",
+		"scope": "source.pde"
+	},
+	"time2": {
+		"prefix": "time",
+		"body": "minute()",
+		"description": "minute",
+		"scope": "source.pde"
+	},
+	"coordinates": {
+		"prefix": "coordinates",
+		"body": "modelX(${1:x}, ${2:y}, ${3:z});",
+		"description": "modelX",
+		"scope": "source.pde"
+	},
+	"coordinates1": {
+		"prefix": "coordinates",
+		"body": "modelY(${1:x}, ${2:y}, ${3:z});",
+		"description": "modelY",
+		"scope": "source.pde"
+	},
+	"coordinates2": {
+		"prefix": "coordinates",
+		"body": "modelZ(${1:x}, ${2:y}, ${3:z});",
+		"description": "modelZ",
+		"scope": "source.pde"
+	},
+	"time3": {
+		"prefix": "time",
+		"body": "month()",
+		"description": "month",
+		"scope": "source.pde"
+	},
+	"mouse": {
+		"prefix": "mouse",
+		"body": "mouseButton",
+		"description": "mouseButton",
+		"scope": "source.pde"
+	},
+	"mouse1": {
+		"prefix": "mouse",
+		"body": "void mouseDragged() {\n\t${1}\n}",
+		"description": "mouseDragged",
+		"scope": "source.pde"
+	},
+	"mouse2": {
+		"prefix": "mouse",
+		"body": "void mouseMoved() {\n\t${1}\n}",
+		"description": "mouseMoved",
+		"scope": "source.pde"
+	},
+	"mouse3": {
+		"prefix": "mouse",
+		"body": "mousePressed",
+		"description": "mousePressed",
+		"scope": "source.pde"
+	},
+	"mouse4": {
+		"prefix": "mouse",
+		"body": "void mousePressed() {\n\t${1}\n}",
+		"description": "mousePressed",
+		"scope": "source.pde"
+	},
+	"mouse5": {
+		"prefix": "mouse",
+		"body": "void mouseReleased() {\n\t${1}\n}",
+		"description": "mouseReleased",
+		"scope": "source.pde"
+	},
+	"mouse6": {
+		"prefix": "mouse",
+		"body": "mouseX",
+		"description": "mouseX",
+		"scope": "source.pde"
+	},
+	"mouse7": {
+		"prefix": "mouse",
+		"body": "mouseY",
+		"description": "mouseY",
+		"scope": "source.pde"
+	},
+	"nf": {
+		"prefix": "nf",
+		"body": "nf(${3:value}, ${4:left}${6:, ${5:right}});",
+		"description": "nf",
+		"scope": "source.pde"
+	},
+	"nfc": {
+		"prefix": "nfc",
+		"body": "nfc(${3:value}${5:, ${4:right}});",
+		"description": "nfc",
+		"scope": "source.pde"
+	},
+	"nfp": {
+		"prefix": "nfp",
+		"body": "nfp(${3:value}, ${4:left}${6:, ${5:right}});",
+		"description": "nfp",
+		"scope": "source.pde"
+	},
+	"nfs": {
+		"prefix": "nfs",
+		"body": "nfs(${3:value}, ${4:left}${6:, ${5:right}});",
+		"description": "nfs",
+		"scope": "source.pde"
+	},
+	"cursor": {
+		"prefix": "cursor",
+		"body": "noCursor();",
+		"description": "noCursor",
+		"scope": "source.pde"
+	},
+	"nofill": {
+		"prefix": "nofill",
+		"body": "noFill();",
+		"description": "noFill",
+		"scope": "source.pde"
+	},
+	"noise": {
+		"prefix": "noise",
+		"body": "noise(${1:x}${5:, ${2:y}${4:, ${3:z}}});",
+		"description": "noise",
+		"scope": "source.pde"
+	},
+	"noisedetail": {
+		"prefix": "noisedetail",
+		"body": "noiseDetail(${1:octaves}${4:, ${3:falloff}});",
+		"description": "noiseDetail",
+		"scope": "source.pde"
+	},
+	"noiseseed": {
+		"prefix": "noiseseed",
+		"body": "noiseSeed(${1:x});",
+		"description": "noiseSeed",
+		"scope": "source.pde"
+	},
+	"light5": {
+		"prefix": "light",
+		"body": "noLights();",
+		"description": "noLights",
+		"scope": "source.pde"
+	},
+	"norm": {
+		"prefix": "norm",
+		"body": "norm(${1:value}, ${2:low}, ${3:high});",
+		"description": "norm",
+		"scope": "source.pde"
+	},
+	"light6": {
+		"prefix": "light",
+		"body": "normal(${1:nx}, ${2:ny}, ${3:nz});",
+		"description": "normal",
+		"scope": "source.pde"
+	},
+	"smooth": {
+		"prefix": "smooth",
+		"body": "noSmooth();",
+		"description": "noSmooth",
+		"scope": "source.pde"
+	},
+	"nostroke": {
+		"prefix": "nostroke",
+		"body": "noStroke();",
+		"description": "noStroke",
+		"scope": "source.pde"
+	},
+	"notint": {
+		"prefix": "notint",
+		"body": "noTint();",
+		"description": "noTint",
+		"scope": "source.pde"
+	},
+	"object": {
+		"prefix": "object",
+		"body": "${1:Object} ${2:o}${4: = new ${1}($3)};",
+		"description": "Object",
+		"scope": "source.pde"
+	},
+	"online": {
+		"prefix": "online",
+		"body": "online",
+		"description": "online",
+		"scope": "source.pde"
+	},
+	"camera4": {
+		"prefix": "camera",
+		"body": "ortho(${7:${1:left}, ${2:right}, ${3:bottom}, ${4:top}, ${5:near}, ${6:far}});",
+		"description": "ortho",
+		"scope": "source.pde"
+	},
+	"package": {
+		"prefix": "package",
+		"body": "/**\n *  ${1:Description}\n *\n *\t@author ${2:$TM_FULLNAME}\n *\t@since  ${3:`date +%d.%m.%Y`}\n */\n\npackage ${4:package};",
+		"description": "package",
+		"scope": "source.pde"
+	},
+	"param": {
+		"prefix": "param",
+		"body": "param(${1:s});",
+		"description": "param",
+		"scope": "source.pde"
+	},
+	"parse": {
+		"prefix": "parse",
+		"body": "parseXML(${1:rawString});",
+		"description": "parseXML",
+		"scope": "source.pde"
+	},
+	"camera5": {
+		"prefix": "camera",
+		"body": "perspective(${5:${1:fov}, ${2:aspect}, ${3:zNear}, ${4:zFar}});",
+		"description": "perspective",
+		"scope": "source.pde"
+	},
+	"font1": {
+		"prefix": "font",
+		"body": "PFont ${1:font};\n$1 = loadFont(${3:\"${2:FFScala-32.vlw}\"});",
+		"description": "PFont",
+		"scope": "source.pde"
+	},
+	"pgraphics": {
+		"prefix": "pgraphics",
+		"body": "PGraphics pg;\npg = createGraphics(${5:${1:width}, ${2:height}${4:, ${3:applet}}});",
+		"description": "PGraphics",
+		"scope": "source.pde"
+	},
+	"pi1": {
+		"prefix": "pi",
+		"body": "PI",
+		"description": "PI",
+		"scope": "source.pde"
+	},
+	"pimage": {
+		"prefix": "pimage",
+		"body": "PImage(${1:width}, ${2:height});",
+		"description": "PImage",
+		"scope": "source.pde"
+	},
+	"pixels": {
+		"prefix": "pixels",
+		"body": "pixels[${1:index}]",
+		"description": "pixels",
+		"scope": "source.pde"
+	},
+	"mouse8": {
+		"prefix": "mouse",
+		"body": "pmouseX",
+		"description": "pmouseX",
+		"scope": "source.pde"
+	},
+	"mouse9": {
+		"prefix": "mouse",
+		"body": "pmouseY",
+		"description": "pmouseY",
+		"scope": "source.pde"
+	},
+	"point": {
+		"prefix": "point",
+		"body": "point(${1:x}, ${2:y}${4:, ${3:z}});",
+		"description": "point",
+		"scope": "source.pde"
+	},
+	"light7": {
+		"prefix": "light",
+		"body": "pointLight(${1:v1}, ${2:v2}, ${3:v3}, ${4:nx}, ${5:ny}, ${6:nz});",
+		"description": "pointLight",
+		"scope": "source.pde"
+	},
+	"pow": {
+		"prefix": "pow",
+		"body": "pow(${1:num}, ${2:exponent});",
+		"description": "pow",
+		"scope": "source.pde"
+	},
+	"camera6": {
+		"prefix": "camera",
+		"body": "printCamera();",
+		"description": "printCamera",
+		"scope": "source.pde"
+	},
+	"println": {
+		"prefix": "println",
+		"body": "println(\"${1:var}: \"+${1:var});$0",
+		"description": "println var",
+		"scope": "source.pde"
+	},
+	"println1": {
+		"prefix": "println",
+		"body": "println(\"$1\");$0",
+		"description": "println text",
+		"scope": "source.pde"
+	},
+	"matrix": {
+		"prefix": "matrix",
+		"body": "printMatrix();",
+		"description": "printMatrix",
+		"scope": "source.pde"
+	},
+	"camera7": {
+		"prefix": "camera",
+		"body": "printProjection();",
+		"description": "printProjection",
+		"scope": "source.pde"
+	},
+	"private": {
+		"prefix": "private",
+		"body": "private ${1:void} ${2:name}($3) {\n\t$0${1/void$|(.+)/(?1:return null;)/}\n}",
+		"description": "private function",
+		"scope": "source.pde"
+	},
+	"private1": {
+		"prefix": "private",
+		"body": "private static ${1:void} ${2:name}($3) {\n\t$0${1/void$|(.+)/(?1:return null;)/}\n}",
+		"description": "private static function",
+		"scope": "source.pde"
+	},
+	"private2": {
+		"prefix": "private",
+		"body": "private static ${1:String} ${2:str}${4: = ${3:value}};",
+		"description": "private static var",
+		"scope": "source.pde"
+	},
+	"private3": {
+		"prefix": "private",
+		"body": "private ${1:Object} ${2:o}${4: = new ${1}($3)};",
+		"description": "private var object",
+		"scope": "source.pde"
+	},
+	"private4": {
+		"prefix": "private",
+		"body": "private ${1:String} ${2:str}${4: = ${3:value}};",
+		"description": "private var",
+		"scope": "source.pde"
+	},
+	"protected": {
+		"prefix": "protected",
+		"body": "protected ${1:void} ${2:name}($3) {\n\t$0${1/void$|(.+)/(?1:return null;)/}\n}",
+		"description": "protected function",
+		"scope": "source.pde"
+	},
+	"protected1": {
+		"prefix": "protected",
+		"body": "protected ${1:Object} ${2:o}${4: = new ${1}($3)};",
+		"description": "protected var object",
+		"scope": "source.pde"
+	},
+	"protected2": {
+		"prefix": "protected",
+		"body": "protected ${1:String} ${2:str}${4: = ${3:value}};",
+		"description": "protected var",
+		"scope": "source.pde"
+	},
+	"public": {
+		"prefix": "public",
+		"body": "public ${1:void} ${2:name}($3) {\n\t$0${1/void$|(.+)/(?1:return null;)/}\n}",
+		"description": "public function",
+		"scope": "source.pde"
+	},
+	"public1": {
+		"prefix": "public",
+		"body": "public static ${1:void} ${2:name}($3) {\n\t$0${1/void$|(.+)/(?1:return null;)/}\n}",
+		"description": "public static function",
+		"scope": "source.pde"
+	},
+	"public2": {
+		"prefix": "public",
+		"body": "public static ${1:String} ${2:str}${4: = ${3:value}};",
+		"description": "public static var",
+		"scope": "source.pde"
+	},
+	"public3": {
+		"prefix": "public",
+		"body": "public ${1:Object} ${2:o}${4: = new ${1}($3)};",
+		"description": "public var object",
+		"scope": "source.pde"
+	},
+	"public4": {
+		"prefix": "public",
+		"body": "public ${1:String} ${2:str}${4: = ${3:value}};",
+		"description": "public var",
+		"scope": "source.pde"
+	},
+	"matrix1": {
+		"prefix": "matrix",
+		"body": "pushMatrix();\n${1:}\npopMatrix();",
+		"description": "pushMatrix/popMatrix",
+		"scope": "source.pde"
+	},
+	"quad": {
+		"prefix": "quad",
+		"body": "quad(${1:x1}, ${2:y1}, ${3:x2}, ${4:y2}, ${5:x3}, ${6:y3}, ${7:x4}, ${8:y4});",
+		"description": "quad",
+		"scope": "source.pde"
+	},
+	"radians": {
+		"prefix": "radians",
+		"body": "radians(${1:deg});",
+		"description": "radians",
+		"scope": "source.pde"
+	},
+	"random": {
+		"prefix": "random",
+		"body": "random(${1:value1}${3:, ${2:value2}});",
+		"description": "random",
+		"scope": "source.pde"
+	},
+	"random1": {
+		"prefix": "random",
+		"body": "randomGaussian();",
+		"description": "randomGaussian",
+		"scope": "source.pde"
+	},
+	"random2": {
+		"prefix": "random",
+		"body": "randomSeed(${1:value});",
+		"description": "randomSeed",
+		"scope": "source.pde"
+	},
+	"rect": {
+		"prefix": "rect",
+		"body": "rect(${1:x}, ${2:y}, ${3:width}, ${4:height});",
+		"description": "rect",
+		"scope": "source.pde"
+	},
+	"rect1": {
+		"prefix": "rect",
+		"body": "rectMode(${1:CENTER});",
+		"description": "rectMode",
+		"scope": "source.pde"
+	},
+	"red": {
+		"prefix": "red",
+		"body": "red(${1:color});",
+		"description": "red",
+		"scope": "source.pde"
+	},
+	"matrix2": {
+		"prefix": "matrix",
+		"body": "translate(${1:x}, ${2:y}, ${3:z});",
+		"description": "resetMatrix",
+		"scope": "source.pde"
+	},
+	"reverse": {
+		"prefix": "reverse",
+		"body": "reverse(${1:array});",
+		"description": "reverse",
+		"scope": "source.pde"
+	},
+	"rotate": {
+		"prefix": "rotate",
+		"body": "rotate(${1:rad});",
+		"description": "rotate",
+		"scope": "source.pde"
+	},
+	"rotateX": {
+		"prefix": "rotateX",
+		"body": "rotateX(${1:rad});",
+		"description": "rotateX",
+		"scope": "source.pde"
+	},
+	"rotate1": {
+		"prefix": "rotate",
+		"body": "rotateY(${1:rad});",
+		"description": "rotateY",
+		"scope": "source.pde"
+	},
+	"rotate2": {
+		"prefix": "rotate",
+		"body": "rotateZ(${1:rad});",
+		"description": "rotateZ",
+		"scope": "source.pde"
+	},
+	"round": {
+		"prefix": "round",
+		"body": "round(${1:value});",
+		"description": "round",
+		"scope": "source.pde"
+	},
+	"saturation": {
+		"prefix": "saturation",
+		"body": "saturation(${1:color});",
+		"description": "saturation",
+		"scope": "source.pde"
+	},
+	"save": {
+		"prefix": "save",
+		"body": "saveFrame(${2:\"${1:filename}\"});",
+		"description": "save",
+		"scope": "source.pde"
+	},
+	"file4": {
+		"prefix": "file",
+		"body": "saveBytes(${1:filename}, ${2:bytes});",
+		"description": "saveBytes",
+		"scope": "source.pde"
+	},
+	"save1": {
+		"prefix": "save",
+		"body": "saveFrame(${2:\"${1:filename-####.ext}\"});",
+		"description": "saveFrame",
+		"scope": "source.pde"
+	},
+	"file5": {
+		"prefix": "file",
+		"body": "saveStrings(${1:filename}, ${2:strings});",
+		"description": "saveStrings",
+		"scope": "source.pde"
+	},
+	"savex": {
+		"prefix": "savex",
+		"body": "saveXML(${1:xml}, ${2:filename});",
+		"description": "saveXML",
+		"scope": "source.pde"
+	},
+	"scale": {
+		"prefix": "scale",
+		"body": "scale(${1:size});",
+		"description": "scale SIZE",
+		"scope": "source.pde"
+	},
+	"scale1": {
+		"prefix": "scale",
+		"body": "scale(${1:x}, ${2:y}${4:, ${3:z}});",
+		"description": "scale",
+		"scope": "source.pde"
+	},
+	"coordinates3": {
+		"prefix": "coordinates",
+		"body": "screenX(${1:x}, ${2:y}, ${3:z});",
+		"description": "screenX",
+		"scope": "source.pde"
+	},
+	"coordinates4": {
+		"prefix": "coordinates",
+		"body": "screenY(${1:x}, ${2:y}, ${3:z});",
+		"description": "screenY",
+		"scope": "source.pde"
+	},
+	"coordinates5": {
+		"prefix": "coordinates",
+		"body": "screenZ(${1:x}, ${2:y}, ${3:z});",
+		"description": "screenZ",
+		"scope": "source.pde"
+	},
+	"screen": {
+		"prefix": "screen",
+		"body": "screen.height",
+		"description": "screen.height",
+		"scope": "source.pde"
+	},
+	"screen1": {
+		"prefix": "screen",
+		"body": "screen.width",
+		"description": "screen.width",
+		"scope": "source.pde"
+	},
+	"time4": {
+		"prefix": "time",
+		"body": "second()",
+		"description": "second",
+		"scope": "source.pde"
+	},
+	"set": {
+		"prefix": "set",
+		"body": "set(${1:x}, ${2:y}, ${3:color/image});",
+		"description": "set pixel",
+		"scope": "source.pde"
+	},
+	"set1": {
+		"prefix": "set",
+		"body": "public void set${1/./\\u$0/}(${2:String} new${1/./\\u$0/}) {\n    ${1:fieldName} = new${1/./\\u$0/};\n}\n",
+		"description": "set",
+		"scope": "source.pde"
+	},
+	"glswapinterval": {
+		"prefix": "glswapinterval",
+		"body": "// specify the minimum swap interval for buffer swaps.\ngl.setSwapInterval(${1:interval});",
+		"description": "setSwapInterval",
+		"scope": "source.pde"
+	},
+	"setup": {
+		"prefix": "setup",
+		"body": "import processing.opengl.*;\nimport javax.media.opengl.*;\n\nPGraphicsOpenGL pgl;\nGL gl;\n\nvoid setup() {\n\tsize( ${1:300}, ${2:300}, OPENGL );\n\tcolorMode( RGB, 1.0 );\n\thint( ENABLE_OPENGL_4X_SMOOTH );\n\tpgl = (PGraphicsOpenGL) g;\n\tgl = pgl.gl;\n\tgl.setSwapInterval(1);\n\tinitGL();\n\t$3\n}\n\nvoid draw() {\n\tpgl.beginGL();\n  \t$4\n\tpgl.endGL();\n\tgetOpenGLErrors();\n}\n\nvoid initGL() {\n\t$5\n}\n\nvoid getOpenGLErrors() {\n  int error = gl.glGetError();\n  switch (error) {\n    case 1280 :\n      println(\"GL_INVALID_ENUM - An invalid enumerant was passed to an OpenGL command.\");\n    break;\n    case 1282 :\n      println(\"GL_INVALID_OPERATION - An OpenGL command was issued that was invalid or inappropriate for the current state.\");\n    break;\n    case 1281 :\n      println(\"GL_INVALID_VALUE - A value was passed to OpenGL that was outside the allowed range.\");\n    break;\n    case 1285 :\n      println(\"GL_OUT_OF_MEMORY - OpenGL was unable to allocate enough memory to process a command.\");\n    break;\n    case 1283 :\n      println(\"GL_STACK_OVERFLOW - A command caused an OpenGL stack to overflow.\");\n    break;\n    case 1284 :\n      println(\"GL_STACK_UNDERFLOW - A command caused an OpenGL stack to underflow.\");\n    break;\n    case 32817 :\n      println(\"GL_TABLE_TOO_LARGE\");\n    break;\n  }\n}",
+		"description": "setup OpenGL",
+		"scope": "source.pde"
+	},
+	"setup1": {
+		"prefix": "setup",
+		"body": "void setup() {\n\t$1\n}\n\nvoid draw() {\n\t$0\n}\n",
+		"description": "setup",
+		"scope": "source.pde"
+	},
+	"shape": {
+		"prefix": "shape",
+		"body": "shape(${1:s}, ${2:x}, ${3:y}, ${4:w}, ${5:h});",
+		"description": "shape",
+		"scope": "source.pde"
+	},
+	"shapemode": {
+		"prefix": "shapemode",
+		"body": "shapeMode(${1:CENTER});",
+		"description": "shapeMode",
+		"scope": "source.pde"
+	},
+	"material2": {
+		"prefix": "material",
+		"body": "shininess(${1:shine});",
+		"description": "shininess",
+		"scope": "source.pde"
+	},
+	"shorten": {
+		"prefix": "shorten",
+		"body": "shorten(${1:array});",
+		"description": "shorten",
+		"scope": "source.pde"
+	},
+	"sin": {
+		"prefix": "sin",
+		"body": "sin(${1:rad});",
+		"description": "sin",
+		"scope": "source.pde"
+	},
+	"size": {
+		"prefix": "size",
+		"body": "size(${1:200}, ${2:200}${3:, OPENGL});",
+		"description": "size OPENGL",
+		"scope": "source.pde"
+	},
+	"size1": {
+		"prefix": "size",
+		"body": "size(${1:512}, ${2:512});",
+		"description": "size",
+		"scope": "source.pde"
+	},
+	"smooth1": {
+		"prefix": "smooth",
+		"body": "smooth();",
+		"description": "smooth",
+		"scope": "source.pde"
+	},
+	"sort": {
+		"prefix": "sort",
+		"body": "sort(${1:dataArray}${3:, ${2:count}});",
+		"description": "sort",
+		"scope": "source.pde"
+	},
+	"material3": {
+		"prefix": "material",
+		"body": "specular(${8:${3:value1}, ${4:value2}, ${5:value3}${7:, ${6:alpha}}});",
+		"description": "specular",
+		"scope": "source.pde"
+	},
+	"sphere": {
+		"prefix": "sphere",
+		"body": "sphere(${1:radius});",
+		"description": "sphere",
+		"scope": "source.pde"
+	},
+	"sphere1": {
+		"prefix": "sphere",
+		"body": "sphereDetail(${1:n});",
+		"description": "sphereDetail",
+		"scope": "source.pde"
+	},
+	"splice": {
+		"prefix": "splice",
+		"body": "splice(${1:array}, ${2:value/array2}, ${3:index});",
+		"description": "splice",
+		"scope": "source.pde"
+	},
+	"split": {
+		"prefix": "split",
+		"body": "split(${3:str}, ${4:delimiter});",
+		"description": "split",
+		"scope": "source.pde"
+	},
+	"split1": {
+		"prefix": "split",
+		"body": "splitTokens(${3:str}${5:, ${4:tokens}});",
+		"description": "splitTokens",
+		"scope": "source.pde"
+	},
+	"light8": {
+		"prefix": "light",
+		"body": "spotLight(${1:v1}, ${2:v2}, ${3:v3}, ${4:x}, ${5:y}, ${6:z}, ${7:nx}, ${8:ny}, ${9:nz}, ${10:angle}, ${11:concentration});",
+		"description": "spotLight",
+		"scope": "source.pde"
+	},
+	"sq": {
+		"prefix": "sq",
+		"body": "sq(${1:value});",
+		"description": "sq",
+		"scope": "source.pde"
+	},
+	"sqrt": {
+		"prefix": "sqrt",
+		"body": "sqrt(${1:value});",
+		"description": "sqrt",
+		"scope": "source.pde"
+	},
+	"status": {
+		"prefix": "status",
+		"body": "status(${1:text});",
+		"description": "status",
+		"scope": "source.pde"
+	},
+	"str": {
+		"prefix": "str",
+		"body": "str(${3:\"${1:str}\"});",
+		"description": "str",
+		"scope": "source.pde"
+	},
+	"string": {
+		"prefix": "string",
+		"body": "String ${1:str} ${6:= \"${3:CCCP}\"};",
+		"description": "String",
+		"scope": "source.pde"
+	},
+	"stroke": {
+		"prefix": "stroke",
+		"body": "stroke(${1:grey}, ${2:alpha});",
+		"description": "stroke grey alpha",
+		"scope": "source.pde"
+	},
+	"stroke1": {
+		"prefix": "stroke",
+		"body": "stroke(${1:grey});",
+		"description": "stroke grey",
+		"scope": "source.pde"
+	},
+	"stroke2": {
+		"prefix": "stroke",
+		"body": "stroke(${1:red}, ${2:green}, ${3:blue});",
+		"description": "stroke rgb",
+		"scope": "source.pde"
+	},
+	"stroke3": {
+		"prefix": "stroke",
+		"body": "stroke(${1:red}, ${2:green}, ${3:blue}, ${6:alpha});",
+		"description": "stroke rgba",
+		"scope": "source.pde"
+	},
+	"stroke4": {
+		"prefix": "stroke",
+		"body": "stroke(${8:${3:value1}, ${4:value2}, ${5:value3}${7:, ${6:alpha}}});",
+		"description": "stroke",
+		"scope": "source.pde"
+	},
+	"stroke5": {
+		"prefix": "stroke",
+		"body": "strokeWeight(${1:1});",
+		"description": "strokeWeight",
+		"scope": "source.pde"
+	},
+	"subset": {
+		"prefix": "subset",
+		"body": "subset(${1:array}, ${2:offset});",
+		"description": "subset",
+		"scope": "source.pde"
+	},
+	"switch": {
+		"prefix": "switch",
+		"body": "switch ($1) {\n\t$0\n}",
+		"description": "switch",
+		"scope": "source.pde"
+	},
+	"tan": {
+		"prefix": "tan",
+		"body": "tan(${1:rad});",
+		"description": "tan",
+		"scope": "source.pde"
+	},
+	"text": {
+		"prefix": "text",
+		"body": "text(${1:data}, ${2:x}, ${3:y}${5:, ${4:z}});",
+		"description": "text data",
+		"scope": "source.pde"
+	},
+	"text1": {
+		"prefix": "text",
+		"body": "text(${1:stringdata}, ${2:x}, ${3:y}, ${4:width}, ${5:height}${7:, ${6:z}});",
+		"description": "text stringdata",
+		"scope": "source.pde"
+	},
+	"text2": {
+		"prefix": "text",
+		"body": "textAscent();",
+		"description": "textAscent",
+		"scope": "source.pde"
+	},
+	"text3": {
+		"prefix": "text",
+		"body": "textDescent();",
+		"description": "textDescent",
+		"scope": "source.pde"
+	},
+	"text4": {
+		"prefix": "text",
+		"body": "textFont(${1:font}${7:, ${6:size}});",
+		"description": "textFont",
+		"scope": "source.pde"
+	},
+	"text5": {
+		"prefix": "text",
+		"body": "textLeading(${1:size});",
+		"description": "textLeading",
+		"scope": "source.pde"
+	},
+	"text6": {
+		"prefix": "text",
+		"body": "textSize(${1:size});",
+		"description": "textSize",
+		"scope": "source.pde"
+	},
+	"text7": {
+		"prefix": "text",
+		"body": "textWidth(${1:data});",
+		"description": "textWidth",
+		"scope": "source.pde"
+	},
+	"throw": {
+		"prefix": "throw",
+		"body": "throw new Exception(\"${1:Name}\");",
+		"description": "throw",
+		"scope": "source.pde"
+	},
+	"tint": {
+		"prefix": "tint",
+		"body": "tint(${8:${3:value1}, ${4:value2}, ${5:value3}${7:, ${6:alpha}}});",
+		"description": "tint",
+		"scope": "source.pde"
+	},
+	"translate": {
+		"prefix": "translate",
+		"body": "translate(${1:x}, ${2:y}${4:, ${3:z}});",
+		"description": "translate",
+		"scope": "source.pde"
+	},
+	"triangle": {
+		"prefix": "triangle",
+		"body": "triangle(${1:x1}, ${2:y1}, ${3:x2}, ${4:y2}, ${5:x3}, ${6:y3});",
+		"description": "triangle",
+		"scope": "source.pde"
+	},
+	"trim": {
+		"prefix": "trim",
+		"body": "trim(${3:str});",
+		"description": "trim",
+		"scope": "source.pde"
+	},
+	"try": {
+		"prefix": "try",
+		"body": "try {\n\t$1\n}",
+		"description": "try",
+		"scope": "source.pde"
+	},
+	"try1": {
+		"prefix": "try",
+		"body": "try {\n\t$1\n} catch (${2:Exception} e) {\n\t$3\n}",
+		"description": "try..catch",
+		"scope": "source.pde"
+	},
+	"try2": {
+		"prefix": "try",
+		"body": "try {\n\t$1\n} catch (${2:Exception} e) {\n\t$3\n} finally {\n\t$4\n}",
+		"description": "try..catch..finally",
+		"scope": "source.pde"
+	},
+	"pi2": {
+		"prefix": "pi",
+		"body": "TWO_PI",
+		"description": "TWO PI",
+		"scope": "source.pde"
+	},
+	"unbinary": {
+		"prefix": "unbinary",
+		"body": "unbinary(${3:\"${1:str}\"});",
+		"description": "unbinary",
+		"scope": "source.pde"
+	},
+	"unhex": {
+		"prefix": "unhex",
+		"body": "unhex(${3:c});",
+		"description": "unhex",
+		"scope": "source.pde"
+	},
+	"updatepixels": {
+		"prefix": "updatepixels",
+		"body": "updatePixels();",
+		"description": "updatePixels",
+		"scope": "source.pde"
+	},
+	"var": {
+		"prefix": "var",
+		"body": "${1:Object} ${2:o}${4: = new ${1}($3)};",
+		"description": "var object",
+		"scope": "source.pde"
+	},
+	"var1": {
+		"prefix": "var",
+		"body": "${1:String} ${2:str}${4: = ${3:value};}",
+		"description": "var",
+		"scope": "source.pde"
+	},
+	"vec": {
+		"prefix": "vec",
+		"body": "PVector ${1:v} = new PVector(${2});",
+		"description": "var vector",
+		"scope": "source.pde"
+	},
+	"vec1": {
+		"prefix": "vec",
+		"body": "PVector ${1:v} = new PVector(${2:x},${3:y});",
+		"description": "var vector xy",
+		"scope": "source.pde"
+	},
+	"vec2": {
+		"prefix": "vec",
+		"body": "PVector ${1:v} = new PVector(${2:x},${3:y},${4:z});",
+		"description": "var vector xyz",
+		"scope": "source.pde"
+	},
+	"vertex": {
+		"prefix": "vertex",
+		"body": "vertex(${1:x}, ${2:y}, ${3:z}${6:, ${4:u}, ${5:v}});",
+		"description": "vertex 3D",
+		"scope": "source.pde"
+	},
+	"vertex1": {
+		"prefix": "vertex",
+		"body": "vertex(${1:x}, ${2:y}${5:, ${3:u}, ${4:v}});",
+		"description": "vertex",
+		"scope": "source.pde"
+	},
+	"while": {
+		"prefix": "while",
+		"body": "while ($1) {\n\t$0\n}",
+		"description": "while",
+		"scope": "source.pde"
+	},
+	"time5": {
+		"prefix": "time",
+		"body": "year()",
+		"description": "year",
+		"scope": "source.pde"
+	}
+}

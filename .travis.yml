@@ -1,0 +1,12 @@
+notifications:
+ email: false
+
+language: node_js
+
+node_js:
+ - 4.0
+
+install:
+ - "npm install -g typescript"
+ - "npm install -g mocha"
+ - "npm install"

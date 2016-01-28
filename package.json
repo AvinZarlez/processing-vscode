@@ -26,10 +26,14 @@
     "java"
   ],
   "activationEvents": [
-    "onLanguage:pde"
+    "onCommand:extension.sayHello"
   ],
   "main": "./out/src/extension",
   "contributes": {
+		"commands": [{
+			"command": "extension.sayHello",
+			"title": "Hello World"
+		}],
     "languages": [
       {
         "id": "pde",

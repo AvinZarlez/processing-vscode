@@ -18,14 +18,10 @@
     "Snippets"
   ],
   "activationEvents": [
-    "onCommand:extension.sayHello"
+    "onLanguage:pde"
   ],
   "main": "./out/src/extension",
   "contributes": {
-		"commands": [{
-			"command": "extension.sayHello",
-			"title": "Hello World"
-		}],
     "languages": [
       {
         "id": "pde",

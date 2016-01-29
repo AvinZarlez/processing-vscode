@@ -30,7 +30,8 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "configuration": {
+        // For future use
+        /*"configuration": {
             "type": "object",
             "title": "Processing configuration",
             "properties": {
@@ -40,7 +41,7 @@
                     "description": "Path to your Processing installation. If you added Processing to your PATH, then use \"./\""
                 }
             }
-        },
+        },*/
         "commands": [
             {
                 "command": "extension.createTaskFile",
@@ -84,6 +85,10 @@
     "devDependencies": {
         "typescript": "^1.6.2",
         "vscode": "^0.10.x"
+    },
+    "dependencies": {
+        "fs-extra": "^0.26.5",
+        "open": "^0.0.5"
     },
     "icon": "processing.png"
 }

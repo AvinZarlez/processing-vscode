@@ -12,6 +12,13 @@ This extension does not allow you to debug Java or Processing projects.
 
 Possibly! Let me know, I'd love to hear your suggestions.
 
+## Installation Instructions
+
+1. Open [Visual Studio Code](https://code.visualstudio.com/)
+1. Open the Command Pallet (`CTRL+SHIFT+P` for Windows/Linux or `CMD+SHIFT+P` on Mac) enter the command “Install Extension”
+1. Search for “Processing Language” and click on this extension.
+1. Restart Visual Studio Code
+
 ## Feature list:
 ### Syntax highlighting
 

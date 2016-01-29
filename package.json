@@ -27,7 +27,7 @@
     ],
     "activationEvents": [
         "onCommand:extension.processingCreateTaskFile",
-        "onCommand:extension.processingRunTaskFile"
+        "onCommand:extension.processingRunTaskFile",
         "onCommand:extension.processingOpenDocumentation"
     ],
     "main": "./out/src/extension",
@@ -85,8 +85,8 @@
         "vscode": "^0.10.x"
     },
     "dependencies": {
-        "fs-extra": "^0.26.5",
-        "open": "^0.0.5"
+        "fs-extra": "latest",
+        "open": "latest"
     },
     "icon": "processing.png"
 }

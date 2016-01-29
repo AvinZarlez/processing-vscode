@@ -10,7 +10,7 @@ This extension does not allow you to debug Java or Processing projects.
 
 ### Can you add XZY feature?
 
-Possibly! Let me know, I'd love to hear your suggestions.
+Possibly! [Let us know](https://github.com/TobiahZ/processing-vscode/issues), we'd love to hear your suggestions.
 
 ## Installation Instructions
 
@@ -127,7 +127,7 @@ Simply modify the `.vscode/tasks.json` file to go directly to wherever Processin
 
 Find the `"command"` entry, and append your installation path to the beginning of `processing-java`. 
 
-(Be sure to turn any "`\`" into `\\`!)
+(Be sure to turn any "`\`" into "`\\`"!)
 
 Example:
 ```json

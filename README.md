@@ -129,6 +129,11 @@ Example:
 
 **NOTE: This is untested on Mac and Linux**
 
+## To Do List
+
+* `[Research Needed]` Debugging support
+* `[Low Priority]` Create proper Mocha tests
+
 ## Credits
 
 Syntax highlighting and snippets code based on the [Processing Sublime Text plugin](https://github.com/b-g/processing-sublime).

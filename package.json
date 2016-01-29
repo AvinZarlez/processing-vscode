@@ -1,92 +1,92 @@
 {
-    "name": "language-pde",
-    "displayName": "Processing Language",
-    "description": "Processing Language Support for VSCode",
-    "version": "0.0.3",
-    "publisher": "Tobiah",
-    "engines": {
-        "vscode": "^0.10.1"
-    },
-    "homepage": "https://github.com/TobiahZ/processing-vscode",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/TobiahZ/processing-vscode.git"
-    },
-    "categories": [
-        "Languages",
-        "Snippets"
+  "name": "language-pde",
+  "displayName": "Processing Language",
+  "description": "Processing Language Support for VSCode",
+  "version": "0.1.0",
+  "publisher": "Tobiah",
+  "engines": {
+    "vscode": "^0.10.1"
+  },
+  "homepage": "https://github.com/TobiahZ/processing-vscode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TobiahZ/processing-vscode.git"
+  },
+  "categories": [
+    "Languages",
+    "Snippets"
+  ],
+  "bugs": "https://github.com/TobiahZ/processing-vscode/issues",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "keywords": [
+    "processing",
+    "pde",
+    "language",
+    "snippets",
+    "java"
+  ],
+  "activationEvents": [
+    "onCommand:extension.processingCreateTaskFile",
+    "onCommand:extension.processingRunTaskFile",
+    "onCommand:extension.processingOpenDocumentation"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.processingCreateTaskFile",
+        "title": "Processing: Create Task File"
+      },
+      {
+        "command": "extension.processingRunTaskFile",
+        "title": "Processing: Run Processing Project"
+      },
+      {
+        "command": "extension.processingOpenDocumentation",
+        "title": "Processing: Open Extension Documentation"
+      }
     ],
-    "bugs": "https://github.com/TobiahZ/processing-vscode/issues",
-    "license": "SEE LICENSE IN LICENSE.txt",
-    "keywords": [
-        "processing",
-        "pde",
-        "language",
-        "snippets",
-        "java"
+    "languages": [
+      {
+        "id": "pde",
+        "aliases": [
+          "Processing",
+          "pde"
+        ],
+        "extensions": [
+          ".pde",
+          ".java"
+        ],
+        "configuration": "./pde.configuration.json"
+      }
     ],
-    "activationEvents": [
-        "onCommand:extension.processingCreateTaskFile",
-        "onCommand:extension.processingRunTaskFile",
-        "onCommand:extension.processingOpenDocumentation"
+    "grammars": [
+      {
+        "language": "pde",
+        "scopeName": "source.pde",
+        "path": "./syntaxes/pde.tmLanguage"
+      }
     ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.processingCreateTaskFile",
-                "title": "Processing: Create Task File"
-            },
-            {
-                "command": "extension.processingRunTaskFile",
-                "title": "Processing: Run Processing Project"
-            },
-            {
-                "command": "extension.processingOpenDocumentation",
-                "title": "Processing: Open Extension Documentation"
-            }
-        ],
-        "languages": [
-            {
-                "id": "pde",
-                "aliases": [
-                    "Processing",
-                    "pde"
-                ],
-                "extensions": [
-                    ".pde",
-                    ".java"
-                ],
-                "configuration": "./pde.configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "pde",
-                "scopeName": "source.pde",
-                "path": "./syntaxes/pde.tmLanguage"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "pde",
-                "path": "./snippets/snippets.json"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-        "pretest": "tsc",
-        "test": "mocha --ui tdd ./out/test/extension.test.js"
-    },
-    "devDependencies": {
-        "typescript": "^1.6.2",
-        "vscode": "^0.10.x"
-    },
-    "dependencies": {
-        "fs-extra": "latest",
-        "open": "latest"
-    },
-    "icon": "processing.png"
+    "snippets": [
+      {
+        "language": "pde",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "pretest": "tsc",
+    "test": "mocha --ui tdd ./out/test/extension.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^1.6.2",
+    "vscode": "^0.10.x"
+  },
+  "dependencies": {
+    "fs-extra": "latest",
+    "open": "latest"
+  },
+  "icon": "processing.png"
 }

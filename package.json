@@ -1,50 +1,94 @@
 {
-  "name": "language-pde",
-  "displayName": "Processing Language",
-  "description": "Processing Language Support for VSCode",
-  "version": "0.0.3",
-  "publisher": "Tobiah",
-  "engines": {
-    "vscode": "^0.10.1"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/TobiahZ/processing-vscode",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TobiahZ/processing-vscode.git"
-  },
-  "categories": [
-    "Languages",
-    "Snippets"
-  ],
-  "contributes": {
-    "languages": [
-      {
-        "id": "pde",
-        "aliases": [
-          "Processing",
-          "pde"
-        ],
-        "extensions": [
-          ".pde",
-          ".java"
-        ],
-        "configuration": "./pde.configuration.json"
-      }
+    "name": "language-pde",
+    "displayName": "Processing Language",
+    "description": "Processing Language Support for VSCode",
+    "version": "0.0.3",
+    "publisher": "Tobiah",
+    "engines": {
+        "vscode": "^0.10.1"
+    },
+    "homepage": "https://github.com/TobiahZ/processing-vscode",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TobiahZ/processing-vscode.git"
+    },
+    "categories": [
+        "Languages",
+        "Snippets"
     ],
-    "grammars": [
-      {
-        "language": "pde",
-        "scopeName": "source.pde",
-        "path": "./syntaxes/pde.tmLanguage"
-      }
+    "bugs": "https://github.com/TobiahZ/processing-vscode/issues",
+    "license": "SEE LICENSE IN LICENSE.txt",
+    "keywords": [
+        "processing",
+        "pde",
+        "language",
+        "snippets",
+        "java"
     ],
-    "snippets": [
-      {
-        "language": "pde",
-        "path": "./snippets/snippets.json"
-      }
-    ]
-  },
-  "icon": "processing.png"
+    "activationEvents": [
+        "onCommand:extension.createTaskFile"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        // For future use
+        /*"configuration": {
+            "type": "object",
+            "title": "Processing configuration",
+            "properties": {
+                "processing.path": {
+                    "type": "string",
+                    "default": "./",
+                    "description": "Path to your Processing installation. If you added Processing to your PATH, then use \"./\""
+                }
+            }
+        },*/
+        "commands": [
+            {
+                "command": "extension.createTaskFile",
+                "title": "Create Processing Task File"
+            }
+        ],
+        "languages": [
+            {
+                "id": "pde",
+                "aliases": [
+                    "Processing",
+                    "pde"
+                ],
+                "extensions": [
+                    ".pde",
+                    ".java"
+                ],
+                "configuration": "./pde.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "pde",
+                "scopeName": "source.pde",
+                "path": "./syntaxes/pde.tmLanguage"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "pde",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "pretest": "tsc",
+        "test": "mocha --ui tdd ./out/test/extension.test.js"
+    },
+    "devDependencies": {
+        "typescript": "^1.6.2",
+        "vscode": "^0.10.x"
+    },
+    "dependencies": {
+        "fs-extra": "^0.26.5",
+        "open": "^0.0.5"
+    },
+    "icon": "processing.png"
 }

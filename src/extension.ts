@@ -2,21 +2,35 @@ import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
 
-	//Tell the user the extension has been activated.
-	console.log('Processing language extension is now active!'); 
-    
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	var disposable = vscode.commands.registerCommand('extension.sayHello', () => {
-		// The code you place here will be executed every time your command is executed
+    console.log('Processing language extension is now active!');
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World!');
-	});
-	
-	context.subscriptions.push(disposable);
-	
+    var disposable = vscode.commands.registerCommand('extension.createTaskFile', () => {
+        // The code you place here will be executed every time your command is executed
+        
+        var root = vscode.workspace.rootPath;
+
+        console.log("Root is" + root);
+        if (root == undefined) {
+
+            console.log('Writing file...');
+            var fs = require('fs');
+
+            fs.writeFile(root + "/test.txt", "Hey there!", function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+            });
+            console.log("The file was saved!");
+        }
+
+      
+
+        // Display a message box to the user
+        vscode.window.showInformationMessage('Hello World!');
+    });
+
+    context.subscriptions.push(disposable);
+
 }
 
 // this method is called when your extension is deactivated

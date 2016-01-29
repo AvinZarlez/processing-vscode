@@ -33,7 +33,7 @@
         "commands": [
             {
                 "command": "extension.createTaskFile",
-                "title": "Create Processing Task File"
+                "title": "Processing: Create Task File"
             }
         ],
         "languages": [

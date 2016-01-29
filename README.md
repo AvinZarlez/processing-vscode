@@ -21,7 +21,7 @@ Open any .pde file, or simply choose "Processing" from the drop down menu in the
 
 Once the language has been set, you will see code snippets pop up automatically as you type!
 
-### Command: Create Processing Task File
+### Command: Create Task File
 
 Adds the following `.vscode/tasks.json` file to your project folder:
 
@@ -40,15 +40,23 @@ Adds the following `.vscode/tasks.json` file to your project folder:
 }
 ```
 
-When you run this task (Keyboard shortcut: `Ctrl+Shift+B`), it will compile and run your project! (Make sure to follow all the [other requirements](#Requirements)
+When you run this task (Keyboard shortcut: `Ctrl+Shift+B`), it will compile and run your project! 
 
 If you would like to see output from the compiler, simply comment out the line `"showOutput": "never",`
+
+**NOTE: Processing must be added to your path**
+
+Follow [these instructions](#Add-Processing-to-path) to add Processing to your path.
+
+If you do not wish to do so, you could follow these [alternate instructions](#Alternate-Method) instead to modify this task.
+
+See "[Requirements](#Requirements)" for full details.
 
 ### Command: Run Processing Project
 
 Same as pressing `Ctrl+Shift+B`
 
-**Note: Must have ran the "Create Processing Task File" command first, [see above](#Command-Run-Processing-Project)!**
+**Note: Must have ran the "Create Processing Task File" command first, [see above](#Command-Create-Task-File)!**
 
 ## Requirements
 
@@ -56,8 +64,8 @@ Installing the extension will give you instant access to [syntax highlighting](#
 
 However, in order to compile and run your processing project from Visual Studio Code, you will need to do three things:
 
-1. Set up your `.vscode/tasks.json` file. (See: "[Command: Create Processing Task File](#Command-Run-Processing-Project)")
-1. Add Processing to your PATH. (See: "[Add Processing to path](#Add-Processing-to-path)")
+1. Set up your `.vscode/tasks.json` file. (See: "[Command: Create Task File](#Command-Create-Task-File)")
+1. Add Processing to your path **OR** Modify your `.vscode/tasks.json` file. (See: "[Add Processing to path](#Add-Processing-to-path)" or "[Alternate Method](#Alternate-Method)")
 1. Have a `<File>.pde` whose filename matches the name of the project's folder. (General Processing Requirement)
 
 ## Add Processing to path
@@ -76,7 +84,7 @@ It's easier than you might think!
 * Open the "Advanced System Settings" by running sysdm.cpl
 * In the "System Properties" window, click on the Advanced tab.
 * In the "Advanced" section, click the Environment Variables button.
-* Edit the "Path" variable. Append the processing path (e.g. ;C:\Program Files\Processing-3.0.1\) to the variable value. Each entry is separated with a semicolon.
+* Edit the "Path" variable. Append the processing path (Example: `;C:\Program Files\Processing-3.0.1\`) to the variable value. Each entry is separated with a semicolon.
 
 #### Mac:
 
@@ -98,7 +106,24 @@ Example: `sudo ln -s /opt/processing/processing-java /bin/processing-java`
 
 Once you've installed Processing to your path, you just need to add the appropiate `.vscode/tasks.json` file to every Processing project.
 
-See the command "[Create Processing Task File](#Command-Run-Processing-Project)"
+See the command "[Create Task File](#Command-Create-Task-File)"
+
+### Alternate Method
+
+What if you cannot, or do not want to add Processing to your path?
+
+Simply modify the `.vscode/tasks.json` file to go directly to wherever Processing is installed.
+
+Find the `"command"` entry, and append your installation path to the beginning of `processing-java`. 
+
+(Be sure to turn any "`\`" into `\\`!)
+
+Example:
+```json
+	"command": "C:\\Program Files\\processing-3.0.1\\processing-java",
+```
+
+**NOTE: This is untested on Mac and Linux**
 
 ## Credits
 

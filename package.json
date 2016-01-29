@@ -26,19 +26,24 @@
         "java"
     ],
     "activationEvents": [
-        "onCommand:extension.createTaskFile",
-        "onCommand:extension.runTaskFile"
+        "onCommand:extension.processingCreateTaskFile",
+        "onCommand:extension.processingRunTaskFile"
+        "onCommand:extension.processingOpenDocumentation"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.createTaskFile",
+                "command": "extension.processingCreateTaskFile",
                 "title": "Processing: Create Task File"
             },
             {
-                "command": "extension.runTaskFile",
+                "command": "extension.processingRunTaskFile",
                 "title": "Processing: Run Processing Project"
+            },
+            {
+                "command": "extension.processingOpenDocumentation",
+                "title": "Processing: Open Extension Documentation"
             }
         ],
         "languages": [

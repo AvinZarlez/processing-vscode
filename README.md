@@ -58,6 +58,10 @@ This is just a shortcut for running the `.vscode/tasks.json` file. Same as press
 
 **Note: Must have ran the "Create Processing Task File" command first, [see above](#command-create-task-file)!**
 
+### Command: Open Extension Documentation
+
+Opens this documentation.
+
 ## Requirements
 
 Installing the extension will give you instant access to [syntax highlighting](#syntax-highlighting) and [snippets](#snippets).

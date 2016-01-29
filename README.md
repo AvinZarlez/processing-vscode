@@ -54,7 +54,7 @@ See "[Requirements](#Requirements)" for full details.
 
 ### Command: Run Processing Project
 
-Same as pressing `Ctrl+Shift+B`
+This is just a shortcut for running the `.vscode/tasks.json` file. Same as pressing `Ctrl+Shift+B`
 
 **Note: Must have ran the "Create Processing Task File" command first, [see above](#Command-Create-Task-File)!**
 

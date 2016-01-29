@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     console.log('Processing language extension is now active!');
 
-    var create_task_file = vscode.commands.registerCommand('extension.createTaskFile', () => {
+    var disposable = vscode.commands.registerCommand('extension.createTaskFile', () => {
 
         var pdeTaskFile = context.extensionPath + "/ProcessingTasks.json";
 
@@ -24,6 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
             vscode.window.showErrorMessage("Open project folder first");
         } else {
             var taskPath = vscode.workspace.rootPath + "/.vscode/tasks.json";
+            console.log('checking if exists');
             fse.stat(taskPath, (err, stats) => {
                 if (err && err.code === 'ENOENT') {
                     // Task file doesn't exist, creating it
@@ -51,36 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    context.subscriptions.push(create_task_file);
-
-
-    var run_task_file = vscode.commands.registerCommand('extension.runTaskFile', () => {
-        if (vscode.workspace.rootPath == undefined) {
-            vscode.window.showErrorMessage("Open project folder first");
-        } else {
-            var taskPath = vscode.workspace.rootPath + "/.vscode/tasks.json";
-            fse.stat(taskPath, (err, stats) => {
-                if (err && err.code === 'ENOENT') {
-                    return vscode.window.showErrorMessage("Create task file first!", "Create").then((item) => {
-                        if (item === "Create") {
-                            fse.copy(context.extensionPath + "/ProcessingTasks.json", taskPath, function(err) {
-                                if (err) {
-                                    return console.log(err);
-                                }
-                                remindAddToPath();
-                            });
-                        }
-                    });
-                } else if (err) {
-                    vscode.window.showErrorMessage("When checking if tasks.json exists: " + err);
-                } else if (stats.isFile()) {
-                    vscode.commands.executeCommand("workbench.action.tasks.build");
-                }
-            }
-        }
-    });
-
-    context.subscriptions.push(run_task_file);
+    context.subscriptions.push(disposable);
 
 }
 

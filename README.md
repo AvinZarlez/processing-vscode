@@ -132,6 +132,7 @@ Example:
 ## To Do List
 
 * `[Research Needed]` Debugging support
+* `[Medium Priority]` Take nice looking (Animated?) screen shots for README/Instructions
 * `[Low Priority]` Create proper Mocha tests
 
 ## Credits

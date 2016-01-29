@@ -30,18 +30,6 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
-        // For future use
-        /*"configuration": {
-            "type": "object",
-            "title": "Processing configuration",
-            "properties": {
-                "processing.path": {
-                    "type": "string",
-                    "default": "./",
-                    "description": "Path to your Processing installation. If you added Processing to your PATH, then use \"./\""
-                }
-            }
-        },*/
         "commands": [
             {
                 "command": "extension.createTaskFile",

@@ -11,9 +11,6 @@ install:
  - "npm install -g mocha"
  - "npm install"
  
-before_deploy:
- - "npm install"
- 
 deploy:
   provider: script
   skip_cleanup: true

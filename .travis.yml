@@ -10,6 +10,9 @@ install:
  - "npm install -g typescript"
  - "npm install -g mocha"
  - "npm install"
+
+before_deploy:
+ - "npm install fs-extra"
  
 deploy:
   provider: script

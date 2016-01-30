@@ -4,7 +4,6 @@ if [[ "$TRAVIS_TAG" == "v"* ]]; then
     # Build only if there's a tag that starts with a v'
     echo "Publishing using VSCE"
     npm install -g vsce
-    npm install
     vsce publish <<< $TOBIAH_KEY
 else
     echo "This build has the following tag:"

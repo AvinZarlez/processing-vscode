@@ -85,8 +85,8 @@
     "vscode": "^0.10.x"
   },
   "dependencies": {
-    "fs-extra": "latest",
-    "open": "latest"
+    "fs-extra": "^0.26.5",
+    "open": "^0.0.5"
   },
   "icon": "processing.png"
 }

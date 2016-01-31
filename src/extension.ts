@@ -6,7 +6,7 @@ let open = require("open")
 function copyFile(source, target, cb) {
   var cbCalled = false;
 
-  function done(err) {
+  function done(err?) {
     if (!cbCalled) {
       cb(err);
       cbCalled = true;

@@ -6,6 +6,13 @@ let open = require("open")
 function copyFile(source, target, cb) {
   var cbCalled = false;
 
+  function done(err) {
+    if (!cbCalled) {
+      cb(err);
+      cbCalled = true;
+    }
+  }
+  
   var rd = fs.createReadStream(source);
   rd.on("error", function(err) {
     done(err);
@@ -19,12 +26,6 @@ function copyFile(source, target, cb) {
   });
   rd.pipe(wr);
 
-  function done(err) {
-    if (!cbCalled) {
-      cb(err);
-      cbCalled = true;
-    }
-  }
 }
 
 function remindAddToPath() {
@@ -68,7 +69,7 @@ export function activate(context: vscode.ExtensionContext) {
                                     return console.log(err)
                                 }
                                 remindAddToPath()
-                            });
+                            })
                         }
                     })
                 }

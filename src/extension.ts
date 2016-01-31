@@ -1,7 +1,31 @@
 import * as vscode from 'vscode';
 
-let fse = require('fs-extra');
+let fs = require("fs");
 let open = require("open")
+
+function copyFile(source, target, cb) {
+  var cbCalled = false;
+
+  var rd = fs.createReadStream(source);
+  rd.on("error", function(err) {
+    done(err);
+  });
+  var wr = fs.createWriteStream(target);
+  wr.on("error", function(err) {
+    done(err);
+  });
+  wr.on("close", function(ex) {
+    done();
+  });
+  rd.pipe(wr);
+
+  function done(err) {
+    if (!cbCalled) {
+      cb(err);
+      cbCalled = true;
+    }
+  }
+}
 
 function remindAddToPath() {
     return vscode.window.showInformationMessage("Remember to add Processing to your path!", "Learn More").then((item) => {
@@ -25,10 +49,10 @@ export function activate(context: vscode.ExtensionContext) {
         }
         else {
             var taskPath = vscode.workspace.rootPath + "/.vscode/tasks.json"
-            fse.stat(taskPath, (err, stats) => {
+            fs.stat(taskPath, (err, stats) => {
                 if (err && err.code === 'ENOENT') {
                     // Task file doesn't exist, creating it
-                    fse.copy(pdeTaskFile, taskPath, function(err) {
+                    copyFile(pdeTaskFile, taskPath, function(err) {
                         if (err) {
                             return console.log(err)
                         }
@@ -39,7 +63,7 @@ export function activate(context: vscode.ExtensionContext) {
                 } else if (stats.isFile()) {
                     return vscode.window.showErrorMessage("tasks.json already exists. Overwrite it?", "Yes").then((item) => {
                         if (item === "Yes") {
-                            fse.copy(pdeTaskFile, taskPath, function(err) {
+                            copyFile(pdeTaskFile, taskPath, function(err) {
                                 if (err) {
                                     return console.log(err)
                                 }
@@ -59,11 +83,11 @@ export function activate(context: vscode.ExtensionContext) {
         }
         else {
             var taskPath = vscode.workspace.rootPath + "/.vscode/tasks.json"
-            fse.stat(taskPath, (err, stats) => {
+            fs.stat(taskPath, (err, stats) => {
                 if (err && err.code === 'ENOENT') {
                     return vscode.window.showErrorMessage("Create task file first!", "Create").then((item) => {
                         if (item === "Create") {
-                            fse.copy(context.extensionPath + "/ProcessingTasks.json", taskPath, function(err) {
+                            copyFile(context.extensionPath + "/ProcessingTasks.json", taskPath, function(err) {
                                 if (err) {
                                     return console.log(err)
                                 }

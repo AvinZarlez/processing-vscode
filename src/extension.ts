@@ -3,28 +3,30 @@ import * as vscode from 'vscode';
 let fs = require("fs");
 let open = require("open")
 
-function copyFile(source, target, cb) {
-  var cbCalled = false;
+let child_process = require("child_process");
 
-  function done(err?) {
-    if (!cbCalled) {
-      cb(err);
-      cbCalled = true;
+function copyFile(source, target, cb) {
+    var cbCalled = false;
+
+    function done(err?) {
+        if (!cbCalled) {
+            cb(err);
+            cbCalled = true;
+        }
     }
-  }
-  
-  var rd = fs.createReadStream(source);
-  rd.on("error", function(err) {
-    done(err);
-  });
-  var wr = fs.createWriteStream(target);
-  wr.on("error", function(err) {
-    done(err);
-  });
-  wr.on("close", function(ex) {
-    done();
-  });
-  rd.pipe(wr);
+
+    var rd = fs.createReadStream(source);
+    rd.on("error", function(err) {
+        done(err);
+    });
+    var wr = fs.createWriteStream(target);
+    wr.on("error", function(err) {
+        done(err);
+    });
+    wr.on("close", function(ex) {
+        done();
+    });
+    rd.pipe(wr);
 
 }
 
@@ -37,6 +39,28 @@ function remindAddToPath() {
     })
 }
 
+function checkIfProjectOpen(callback) {
+    var root: string = vscode.workspace.rootPath;
+    var fileFound: boolean = false;
+    if (root == undefined) {
+        vscode.window.showErrorMessage("Open project folder first")
+    }
+    else {
+        var name: string = root.replace(/^.*[\\\/]/, '')
+        fs.stat(root + "/" + name + ".pde", (err, stats) => {
+            if (err && err.code === 'ENOENT') {
+                // Named file doesn't exist.
+                vscode.window.showErrorMessage("Create a " + name + ".pde file first!")
+            } else if (err) {
+                vscode.window.showErrorMessage("When checking if " + name + ".pde exists: " + err)
+            } else if (stats.isFile()) {
+                callback()
+            }
+        })
+    }
+
+}
+
 export function activate(context: vscode.ExtensionContext) {
 
     console.log('Processing language extension is now active!')
@@ -45,64 +69,65 @@ export function activate(context: vscode.ExtensionContext) {
 
         var pdeTaskFile = context.extensionPath + "/ProcessingTasks.json"
 
-        if (vscode.workspace.rootPath == undefined) {
-            vscode.window.showErrorMessage("Open project folder first")
-        }
-        else {
-            var taskPath = vscode.workspace.rootPath + "/.vscode/tasks.json"
+        checkIfProjectOpen(() => {
+            var taskPath = vscode.workspace.rootPath + "/.vscode/"
+
+            function copyTaskFile(p: string) {
+                copyFile(pdeTaskFile, p, function(err) {
+                    if (err) {
+                        return console.log(err)
+                    }
+                    remindAddToPath()
+                })
+            }
+
             fs.stat(taskPath, (err, stats) => {
                 if (err && err.code === 'ENOENT') {
-                    // Task file doesn't exist, creating it
-                    copyFile(pdeTaskFile, taskPath, function(err) {
-                        if (err) {
-                            return console.log(err)
-                        }
-                        remindAddToPath()
-                    })
+                    // .vscode doesn't exist, creating it
+                    try {
+                        fs.mkdirSync(taskPath);
+                    } catch (e) {
+                        if (e.code != 'EEXIST') throw e;
+                    }
+                    copyTaskFile(taskPath + "tasks.json")
                 } else if (err) {
-                    vscode.window.showErrorMessage("When checking if tasks.json exists: " + err)
-                } else if (stats.isFile()) {
-                    return vscode.window.showErrorMessage("tasks.json already exists. Overwrite it?", "Yes").then((item) => {
-                        if (item === "Yes") {
-                            copyFile(pdeTaskFile, taskPath, function(err) {
-                                if (err) {
-                                    return console.log(err)
+                    vscode.window.showErrorMessage("When checking if .vscode/ exists: " + err)
+                } else if (stats.isDirectory()) {
+
+                    taskPath = taskPath + "tasks.json";
+
+                    fs.stat(taskPath, (err, stats) => {
+                        if (err && err.code === 'ENOENT') {
+                            // Task file doesn't exist, creating it
+                            copyTaskFile(taskPath)
+                        } else if (err) {
+                            vscode.window.showErrorMessage("When checking if tasks.json exists: " + err)
+                        } else if (stats.isFile()) {
+                            return vscode.window.showErrorMessage("tasks.json already exists. Overwrite it?", "Yes").then((item) => {
+                                if (item === "Yes") {
+                                    copyTaskFile(taskPath)
                                 }
-                                remindAddToPath()
                             })
                         }
-                    })
+                    });
                 }
             });
-        }
+        });
     });
     context.subscriptions.push(create_task_file);
 
     var run_task_file = vscode.commands.registerCommand('extension.processingRunTaskFile', () => {
-        if (vscode.workspace.rootPath == undefined) {
-            vscode.window.showErrorMessage("Open project folder first")
-        }
-        else {
-            var taskPath = vscode.workspace.rootPath + "/.vscode/tasks.json"
-            fs.stat(taskPath, (err, stats) => {
-                if (err && err.code === 'ENOENT') {
-                    return vscode.window.showErrorMessage("Create task file first!", "Create").then((item) => {
-                        if (item === "Create") {
-                            copyFile(context.extensionPath + "/ProcessingTasks.json", taskPath, function(err) {
-                                if (err) {
-                                    return console.log(err)
-                                }
-                                remindAddToPath()
-                            });
-                        }
-                    })
-                } else if (err) {
-                    vscode.window.showErrorMessage("When checking if tasks.json exists: " + err)
-                } else if (stats.isFile()) {
-                    vscode.commands.executeCommand("workbench.action.tasks.build")
+        checkIfProjectOpen(() => {
+            var root = vscode.workspace.rootPath;
+            var cmd = "\"C:\\Program Files\\processing-3.0.1\\processing-java\" --force --sketch=\"" + root + "\" --output=\"" + root + "\\out\" --run";
+            child_process.exec(cmd, (err, stdout, stderr) => {
+                if (err) {
+                    console.error(err);
+                    return;
                 }
+                console.log(stdout);
             });
-        }
+        });
     });
     context.subscriptions.push(run_task_file);
 

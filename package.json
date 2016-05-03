@@ -5,7 +5,7 @@
   "version": "0.1.19",
   "publisher": "Tobiah",
   "engines": {
-    "vscode": "^0.10.1"
+    "vscode": "^0.10.7"
   },
   "homepage": "https://github.com/TobiahZ/processing-vscode",
   "repository": {
@@ -75,6 +75,7 @@
     ]
   },
   "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
     "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
     "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
     "pretest": "tsc",
@@ -82,7 +83,7 @@
   },
   "devDependencies": {
     "typescript": "^1.6.2",
-    "vscode": "^0.10.x"
+    "vscode": "^0.11.x"
   },
   "dependencies": {
     "open": "^0.0.5"

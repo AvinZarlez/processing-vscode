@@ -82,11 +82,11 @@
     "test": "mocha --ui tdd ./out/test/extension.test.js"
   },
   "devDependencies": {
-    "typescript": "^1.6.2",
-    "vscode": "^0.11.x"
+    "typescript": "^1.6.2"
   },
   "dependencies": {
-    "open": "^0.0.5"
+    "open": "^0.0.5",
+    "vscode": "^0.11.x"
   },
   "icon": "processing.png"
 }

@@ -1,5 +1,5 @@
 # Processing for Visual Studio Code
-[![Build Status](https://travis-ci.org/TobiahZ/processing-vscode.svg?branch=master)](https://travis-ci.org/TobiahZ/processing-vscode)
+[![Build Status](https://travis-ci.org/TobiahZ/processing-vscode.svg?branch=master)](https://travis-ci.org/TobiahZ/processing-vscode) [![Dependency Status](https://dependencyci.com/github/TobiahZ/processing-vscode/badge)](https://dependencyci.com/github/TobiahZ/processing-vscode)
 ## What this extension is
 
 This is a Visual Studio Code extension created by Tobiah Zarlez to add Processing language support.

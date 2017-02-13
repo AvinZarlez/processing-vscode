@@ -77,7 +77,7 @@ However, in order to compile and run your processing project from Visual Studio 
 
 1. Set up your `.vscode/tasks.json` file. (See: "[Command: Create Task File](#command-create-task-file)")
 1. Add Processing to your path **OR** Modify your `.vscode/tasks.json` file. (See: "[Add Processing to path](#add-processing-to-path)" or "[alternate method](#alternate-method)")
-1. Have a `<File>.pde` whose filename matches the name of the project's folder. (General Processing Requirement)
+1. Have a `<File>.pde` whose filename matches the name of the project's folder (General Processing Requirement). Your file cannot contain any spaces or it will not run correctly.
 
 ## Add Processing to path
 

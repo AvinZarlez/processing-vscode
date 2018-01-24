@@ -39,11 +39,11 @@ Adds the following `.vscode/tasks.json` file to your project folder:
 	"isShellCommand": true,
 	"showOutput": "never",
 	"args": [
-        "--force",
+		"--force",
 		"--sketch=${workspaceRoot}",
 		"--output=${workspaceRoot}\\out",
 		"--run"
-    ]
+	]
 }
 ```
 
@@ -83,7 +83,7 @@ However, in order to compile and run your processing project from Visual Studio 
 
 In order to automatically compile and open from Visual Studio Code, you will need to be able to access Processing from your path.
 
-### What does that mean?    
+### What does that mean?
 That means you should be able to type the `processing` from anywhere on your machine, and it will open Processing.
 
 ### How do I do that?

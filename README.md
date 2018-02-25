@@ -30,6 +30,8 @@ Once the language has been set, you will see code snippets pop up automatically 
 
 ### Command: Create Task File
 
+
+**Windows:**  
 Adds the following `.vscode/tasks.json` file to your project folder:
 
 ```json
@@ -42,6 +44,22 @@ Adds the following `.vscode/tasks.json` file to your project folder:
 		"--force",
 		"--sketch=${workspaceRoot}",
 		"--output=${workspaceRoot}\\out",
+		"--run"
+	]
+}
+```
+
+**macOS + Linux:**  
+```json
+{
+	"version": "0.1.0",
+	"command": "processing-java",
+	"isShellCommand": true,
+	"showOutput": "never",
+	"args": [
+		"--force",
+		"--sketch=${workspaceRoot}",
+		"--output=${workspaceRoot}/out",
 		"--run"
 	]
 }

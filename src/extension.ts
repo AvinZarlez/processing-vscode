@@ -1,34 +1,13 @@
 import * as vscode from 'vscode';
-
-let fs = require("fs");
-let open = require("open")
-
-let child_process = require("child_process");
-
-function copyFile(source, target, cb) {
-    var cbCalled = false;
-
-    function done(err?) {
-        if (!cbCalled) {
-            cb(err);
-            cbCalled = true;
-        }
-    }
-
-    var rd = fs.createReadStream(source);
-    rd.on("error", function(err) {
-        done(err);
-    });
-    var wr = fs.createWriteStream(target);
-    wr.on("error", function(err) {
-        done(err);
-    });
-    wr.on("close", function(ex) {
-        done();
-    });
-    rd.pipe(wr);
-
-}
+import * as fs from 'fs';
+import * as path from 'path';
+import * as open from 'open';
+import * as child_process from 'child_process';
+import { 
+    processingCommand, 
+    processingArgs, 
+    processingTasksString 
+} from './processing-tasks';
 
 function remindAddToPath() {
     return vscode.window.showInformationMessage("Remember to add Processing to your path!", "Learn More").then((item) => {
@@ -67,17 +46,15 @@ export function activate(context: vscode.ExtensionContext) {
 
     var create_task_file = vscode.commands.registerCommand('extension.processingCreateTaskFile', () => {
 
-        var pdeTaskFile = context.extensionPath + "/ProcessingTasks.json"
-
         checkIfProjectOpen(() => {
-            var taskPath = vscode.workspace.rootPath + "/.vscode/"
+            var taskPath = path.join(vscode.workspace.rootPath, ".vscode");
 
-            function copyTaskFile(p: string) {
-                copyFile(pdeTaskFile, p, function(err) {
+            function copyTaskFile(destination: string) {
+                fs.writeFile(destination, processingTasksString, { encoding: 'utf8' }, function(err) {
                     if (err) {
-                        return console.log(err)
+                        return console.log(err);
                     }
-                    remindAddToPath()
+                    remindAddToPath();
                 })
             }
 
@@ -89,12 +66,12 @@ export function activate(context: vscode.ExtensionContext) {
                     } catch (e) {
                         if (e.code != 'EEXIST') throw e;
                     }
-                    copyTaskFile(taskPath + "tasks.json")
+                    copyTaskFile(path.join(taskPath, "tasks.json"))
                 } else if (err) {
                     vscode.window.showErrorMessage("When checking if .vscode/ exists: " + err)
                 } else if (stats.isDirectory()) {
 
-                    taskPath = taskPath + "tasks.json";
+                    taskPath = path.join(taskPath, "tasks.json");
 
                     fs.stat(taskPath, (err, stats) => {
                         if (err && err.code === 'ENOENT') {
@@ -118,8 +95,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     var run_task_file = vscode.commands.registerCommand('extension.processingRunTaskFile', () => {
         checkIfProjectOpen(() => {
-            var root = vscode.workspace.rootPath;
-            var cmd = "\"C:\\Program Files\\processing-3.0.1\\processing-java\" --force --sketch=\"" + root + "\" --output=\"" + root + "\\out\" --run";
+            const cmd = `${processingCommand} ${processingArgs.join(" ")}`;
             child_process.exec(cmd, (err, stdout, stderr) => {
                 if (err) {
                     console.error(err);

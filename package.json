@@ -5,7 +5,7 @@
   "version": "0.1.21",
   "publisher": "Tobiah",
   "engines": {
-    "vscode": "^0.10.7"
+    "vscode": "^1.17.0"
   },
   "homepage": "https://github.com/TobiahZ/processing-vscode",
   "repository": {
@@ -76,17 +76,21 @@
   },
   "scripts": {
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
     "pretest": "tsc",
     "test": "mocha --ui tdd ./out/test/extension.test.js"
   },
   "devDependencies": {
-    "typescript": "^1.6.2"
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^6.0.101",
+    "@types/open": "0.0.29",
+    "mocha": "^2.3.3",
+    "typescript": "^2.0.3"
   },
   "dependencies": {
     "open": "^0.0.5",
-    "vscode": "^0.11.x"
+    "vscode": "^1.1.10"
   },
   "icon": "processing.png"
 }

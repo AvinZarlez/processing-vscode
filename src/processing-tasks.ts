@@ -1,6 +1,4 @@
 import * as path from 'path';  
-import { format } from 'path';
-
 
 /**
  * Dyanmically build the args to pass to the `processing-java` command.

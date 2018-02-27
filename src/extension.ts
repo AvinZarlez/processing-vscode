@@ -3,8 +3,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as child_process from 'child_process';
 import { 
-    processingCommand, 
-    processingArgs, 
+    processingCommand,
+    buildProcessingArgs,
     processingTasksString 
 } from './processing-tasks';
 
@@ -94,9 +94,10 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(create_task_file);
 
+    const root = vscode.workspace.rootPath;
     var run_task_file = vscode.commands.registerCommand('extension.processingRunTaskFile', () => {
         checkIfProjectOpen(() => {
-            const cmd = `${processingCommand} ${processingArgs.join(" ")}`;
+            const cmd = `${processingCommand} ${buildProcessingArgs(root).join(" ")}`;
             child_process.exec(cmd, (err, stdout, stderr) => {
                 if (err) {
                     console.error(err);

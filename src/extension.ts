@@ -1,13 +1,14 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as open from 'open';
 import * as child_process from 'child_process';
 import { 
     processingCommand, 
     processingArgs, 
     processingTasksString 
 } from './processing-tasks';
+
+const open = require('open');
 
 function remindAddToPath() {
     return vscode.window.showInformationMessage("Remember to add Processing to your path!", "Learn More").then((item) => {

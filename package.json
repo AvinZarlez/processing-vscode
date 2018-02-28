@@ -79,8 +79,8 @@
     "vscode:prepublish": "tsc -p ./",
     "compile": "tsc -watch -p ./",
     "pretest": "tsc",
-    "test:old": "mocha --ui tdd ./out/test/extension.test.js",
-    "test": "node ./node_modules/vscode/bin/test",
+    "test": "mocha --ui tdd ./out/test/extension.test.js",
+    "test:vscode": "node ./node_modules/vscode/bin/test",
     "lint": "tslint ./src/**/*.ts ./test/*/*.ts",
     "lint:fix": "npm run lint -- --fix"
   },

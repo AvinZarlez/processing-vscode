@@ -6,10 +6,14 @@ language: node_js
 node_js:
  - 4
  - 6
+ - 7.4.0
 
 install:
  - "npm install"
- 
+
+scripts:
+  - "npm run test"
+
 deploy:
   provider: script
   skip_cleanup: true

@@ -5,7 +5,7 @@ import * as child_process from 'child_process';
 import { 
     processingCommand,
     buildProcessingArgs,
-    processingTasksString 
+    processingTaskFilename
 } from './processing-tasks';
 
 const open = require('open');
@@ -47,11 +47,13 @@ export function activate(context: vscode.ExtensionContext) {
 
     var create_task_file = vscode.commands.registerCommand('extension.processingCreateTaskFile', () => {
 
+        const pdeTaskFile = path.join(context.extensionPath, processingTaskFilename);
+
         checkIfProjectOpen(() => {
             var taskPath = path.join(vscode.workspace.rootPath, ".vscode");
 
             function copyTaskFile(destination: string) {
-                fs.writeFile(destination, processingTasksString, { encoding: 'utf8' }, function(err) {
+                fs.writeFile(destination, fs.readFileSync(pdeTaskFile), function(err) {
                     if (err) {
                         return console.log(err);
                     }

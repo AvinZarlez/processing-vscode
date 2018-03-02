@@ -14,30 +14,6 @@ export function buildProcessingArgs(base:string) {
 	];
 }
 
-
 export const processingCommand = "processing-java";
 
-export const processingTasks = {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "Run Sketch",
-			"type": "shell",
-			"group": {
-				"kind": "build",
-				"isDefault": true,
-			},
-			"command": "processing-java",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": true,
-				"panel": "dedicated"
-			},
-			"args": buildProcessingArgs("${workspaceRoot}"),
-		}
-	]
-}
-
-// Also export a pretty string for file writing
-export const processingTasksString: string = JSON.stringify(processingTasks, null, 4);
+export const processingTaskFilename = "ProcessingTasks.json";

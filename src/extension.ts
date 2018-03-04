@@ -77,7 +77,7 @@ export function activate(context: vscode.ExtensionContext) {
             var taskPath = path.join(vscode.workspace.rootPath, ".vscode");
 
             function copyTaskFile(destination: string) {
-                copyFile(destination, pdeTaskFile, function(err) {
+                copyFile(pdeTaskFile, destination, function(err) {
                     if (err) {
                         return console.log(err);
                     }

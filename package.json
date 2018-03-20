@@ -82,8 +82,7 @@
     "test": "mocha --ui tdd ./out/test/extension.test.js"
   },
   "devDependencies": {
-    "typescript": "^1.7.5",
-    "vscode": "^0.11.x"
+    "typescript": "^1.7.5"
   },
   "dependencies": {
     "open": "^0.0.5",

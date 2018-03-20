@@ -5,7 +5,7 @@
   "version": "0.1.22",
   "publisher": "Tobiah",
   "engines": {
-    "vscode": "^0.10.7"
+    "vscode": "^0.10.8"
   },
   "homepage": "https://github.com/TobiahZ/processing-vscode",
   "repository": {
@@ -82,7 +82,8 @@
     "test": "mocha --ui tdd ./out/test/extension.test.js"
   },
   "devDependencies": {
-    "typescript": "^1.6.2"
+    "typescript": "^1.7.5",
+    "vscode": "^0.11.x"
   },
   "dependencies": {
     "open": "^0.0.5",

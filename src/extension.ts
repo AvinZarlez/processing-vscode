@@ -1,9 +1,24 @@
 import * as vscode from 'vscode';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as child_process from 'child_process';
+import {
+    processingCommand,
+    buildProcessingArgs,
+    processingTaskFilename
+} from './processing-tasks';
 
-let fs = require('fs');
-let open = require('open');
+const open = require('open');
 
-let child_process = require('child_process');
+
+function remindAddToPath() {
+    return vscode.window.showInformationMessage("Remember to add Processing to your path!", "Learn More").then((item) => {
+        if (item === "Learn More") {
+            //Open a URL using the npm module "open"
+            open("https://github.com/TobiahZ/processing-vscode#add-processing-to-path")
+        }
+    })
+}
 
 function copyFile(source, target, cb) {
     let cbCalled = false;
@@ -28,15 +43,6 @@ function copyFile(source, target, cb) {
     });
     rd.pipe(wr);
 
-}
-
-function remindAddToPath() {
-    return vscode.window.showInformationMessage('Remember to add Processing to your path!', 'Learn More').then((item) => {
-        if (item === 'Learn More') {
-            // Open a URL using the npm module "open"
-            open('https://github.com/TobiahZ/processing-vscode#add-processing-to-path');
-        }
-    });
 }
 
 function checkIfProjectOpen(callback) {
@@ -67,18 +73,18 @@ export function activate(context: vscode.ExtensionContext) {
 
     let create_task_file = vscode.commands.registerCommand('extension.processingCreateTaskFile', () => {
 
-        let pdeTaskFile = context.extensionPath + '/ProcessingTasks.json';
+        const pdeTaskFile = path.join(context.extensionPath, processingTaskFilename);
 
         checkIfProjectOpen(() => {
-            let taskPath = vscode.workspace.rootPath + '/.vscode/';
+            var taskPath = path.join(vscode.workspace.rootPath, ".vscode");
 
-            function copyTaskFile(p: string) {
-                copyFile(pdeTaskFile, p, function(err) {
+            function copyTaskFile(destination: string) {
+                copyFile(pdeTaskFile, destination, function(err) {
                     if (err) {
                         return console.log(err);
                     }
                     remindAddToPath();
-                });
+                })
             }
 
             fs.stat(taskPath, (err, stats) => {
@@ -89,12 +95,12 @@ export function activate(context: vscode.ExtensionContext) {
                     } catch (e) {
                         if (e.code !== 'EEXIST') throw e;
                     }
-                    copyTaskFile(taskPath + 'tasks.json');
+                    copyTaskFile(path.join(taskPath, "tasks.json"))
                 } else if (err) {
                     vscode.window.showErrorMessage('When checking if .vscode/ exists: ' + err);
                 } else if (stats.isDirectory()) {
 
-                    taskPath = taskPath + 'tasks.json';
+                    taskPath = path.join(taskPath, "tasks.json");
 
                     fs.stat(taskPath, (err, stats) => {
                         if (err && err.code === 'ENOENT') {
@@ -116,10 +122,10 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(create_task_file);
 
-    let run_task_file = vscode.commands.registerCommand('extension.processingRunTaskFile', () => {
+    const root = vscode.workspace.rootPath;
+    var run_task_file = vscode.commands.registerCommand('extension.processingRunTaskFile', () => {
         checkIfProjectOpen(() => {
-            let root = vscode.workspace.rootPath;
-            let cmd = '"C:\\Program Files\\processing-3.0.1\\processing-java" --force --sketch="' + root + '" --output="' + root + '\\out" --run';
+            const cmd = `${processingCommand} ${buildProcessingArgs(root).join(" ")}`;
             child_process.exec(cmd, (err, stdout, stderr) => {
                 if (err) {
                     console.error(err);

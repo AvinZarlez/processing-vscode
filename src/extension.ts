@@ -12,12 +12,12 @@ const open = require('open');
 
 
 function remindAddToPath() {
-    return vscode.window.showInformationMessage("Remember to add Processing to your path!", "Learn More").then((item) => {
-        if (item === "Learn More") {
-            //Open a URL using the npm module "open"
-            open("https://github.com/TobiahZ/processing-vscode#add-processing-to-path")
+    return vscode.window.showInformationMessage('Remember to add Processing to your path!', 'Learn More').then((item) => {
+        if (item === 'Learn More') {
+            // Open a URL using the npm module "open"
+            open('https://github.com/TobiahZ/processing-vscode#add-processing-to-path');
         }
-    })
+    });
 }
 
 function copyFile(source, target, cb) {
@@ -76,7 +76,7 @@ export function activate(context: vscode.ExtensionContext) {
         const pdeTaskFile = path.join(context.extensionPath, processingTaskFilename);
 
         checkIfProjectOpen(() => {
-            var taskPath = path.join(vscode.workspace.rootPath, ".vscode");
+            let taskPath = path.join(vscode.workspace.rootPath, '.vscode');
 
             function copyTaskFile(destination: string) {
                 copyFile(pdeTaskFile, destination, function(err) {
@@ -84,7 +84,7 @@ export function activate(context: vscode.ExtensionContext) {
                         return console.log(err);
                     }
                     remindAddToPath();
-                })
+                });
             }
 
             fs.stat(taskPath, (err, stats) => {
@@ -95,12 +95,12 @@ export function activate(context: vscode.ExtensionContext) {
                     } catch (e) {
                         if (e.code !== 'EEXIST') throw e;
                     }
-                    copyTaskFile(path.join(taskPath, "tasks.json"))
+                    copyTaskFile(path.join(taskPath, 'tasks.json'));
                 } else if (err) {
                     vscode.window.showErrorMessage('When checking if .vscode/ exists: ' + err);
                 } else if (stats.isDirectory()) {
 
-                    taskPath = path.join(taskPath, "tasks.json");
+                    taskPath = path.join(taskPath, 'tasks.json');
 
                     fs.stat(taskPath, (err, stats) => {
                         if (err && err.code === 'ENOENT') {
@@ -123,9 +123,9 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(create_task_file);
 
     const root = vscode.workspace.rootPath;
-    var run_task_file = vscode.commands.registerCommand('extension.processingRunTaskFile', () => {
+    let run_task_file = vscode.commands.registerCommand('extension.processingRunTaskFile', () => {
         checkIfProjectOpen(() => {
-            const cmd = `${processingCommand} ${buildProcessingArgs(root).join(" ")}`;
+            const cmd = `${processingCommand} ${buildProcessingArgs(root).join(' ')}`;
             child_process.exec(cmd, (err, stdout, stderr) => {
                 if (err) {
                     console.error(err);

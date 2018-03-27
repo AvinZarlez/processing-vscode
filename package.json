@@ -86,7 +86,7 @@
   },
   "dependencies": {
     "open": "^0.0.5",
-    "vscode": "^0.11.x"
+    "vscode": "^1.1.x"
   },
   "icon": "processing.png"
 }

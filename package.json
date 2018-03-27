@@ -82,7 +82,7 @@
     "test": "mocha --ui tdd ./out/test/extension.test.js"
   },
   "devDependencies": {
-    "typescript": "^1.7.5"
+    "typescript": "^2.8.1"
   },
   "dependencies": {
     "open": "^0.0.5",

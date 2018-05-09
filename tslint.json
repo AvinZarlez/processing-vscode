@@ -5,10 +5,6 @@
 			true,
 			"check-space"
 		],
-		"indent": [
-			true,
-			"spaces"
-		],
 		"no-duplicate-variable": true,
 		"no-eval": true,
 		"no-internal-module": true,

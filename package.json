@@ -27,6 +27,9 @@
     "multi-root ready"
   ],
   "activationEvents": [
+    "onCommand:processing.CreateTaskFile",
+    "onCommand:processing.RunTaskFile",
+    "onCommand:processing.OpenExtensionDocumentation",
     "onCommand:extension.processingCreateTaskFile",
     "onCommand:extension.processingRunTaskFile",
     "onCommand:extension.processingOpenDocumentation"
@@ -35,15 +38,15 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.processingCreateTaskFile",
+        "command": "processing.CreateTaskFile",
         "title": "Processing: Create Task File"
       },
       {
-        "command": "extension.processingRunTaskFile",
+        "command": "processing.RunTaskFile",
         "title": "Processing: Run Processing Project"
       },
       {
-        "command": "extension.processingOpenDocumentation",
+        "command": "processing.OpenExtensionDocumentation",
         "title": "Processing: Open Extension Documentation"
       }
     ],

@@ -8,15 +8,14 @@ import {
     buildProcessingArgs,
     processingTaskFilename
 } from './processing-tasks';
-
-let opn = require('opn');
+import * as search from './search';
 
 
 function remindAddToPath() {
     return vscode.window.showInformationMessage('Remember to add Processing to your path!', 'Learn More').then((item) => {
         if (item === 'Learn More') {
             // Open a URL using the npm module "open"
-            opn('https://github.com/TobiahZ/processing-vscode#add-processing-to-path');
+            search.openURL('https://github.com/TobiahZ/processing-vscode#add-processing-to-path');
         }
     });
 }
@@ -70,7 +69,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     console.log('Processing language extension is now active!');
 
-    let create_task_file = vscode.commands.registerCommand('extension.processingCreateTaskFile', () => {
+    let create_task_file = vscode.commands.registerCommand('processing.CreateTaskFile', () => {
 
         const pdeTaskFile = path.join(context.extensionPath, processingTaskFilename);
 
@@ -121,7 +120,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(create_task_file);
 
-    let run_task_file = vscode.commands.registerCommand('extension.processingRunTaskFile', () => {
+    let run_task_file = vscode.commands.registerCommand('processing.RunTaskFile', () => {
         checkIfProjectOpen((root: vscode.WorkspaceFolder) => {
             const cmd = `${processingCommand} ${buildProcessingArgs(root.uri.fsPath).join(' ')}`;
             child_process.exec(cmd, (err, stdout, stderr) => {
@@ -135,8 +134,8 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(run_task_file);
 
-    let open_documentation = vscode.commands.registerCommand('extension.processingOpenDocumentation', () => {
-        opn('https://github.com/TobiahZ/processing-vscode#processing-for-visual-studio-code');
+    let open_documentation = vscode.commands.registerCommand('processing.OpenExtensionDocumentation', () => {
+        search.openURL('https://github.com/TobiahZ/processing-vscode#processing-for-visual-studio-code');
     });
     context.subscriptions.push(open_documentation);
 }

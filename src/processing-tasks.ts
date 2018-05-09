@@ -1,7 +1,7 @@
 import * as path from 'path';
 
 /**
- * Dyanmically build the args to pass to the `processing-java` command.
+ * Dynamically build the args to pass to the `processing-java` command.
  *
  * @param base the base directory of the sketch
  */

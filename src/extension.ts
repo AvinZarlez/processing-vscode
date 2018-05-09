@@ -1,3 +1,4 @@
+'use strict';
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -8,22 +9,22 @@ import {
     processingTaskFilename
 } from './processing-tasks';
 
-const opn = require('opn');
+let opn = require('opn');
 
 
 function remindAddToPath() {
     return vscode.window.showInformationMessage('Remember to add Processing to your path!', 'Learn More').then((item) => {
         if (item === 'Learn More') {
             // Open a URL using the npm module "open"
-            open('https://github.com/TobiahZ/processing-vscode#add-processing-to-path');
+            opn('https://github.com/TobiahZ/processing-vscode#add-processing-to-path');
         }
     });
 }
 
-function copyFile(source, target, cb) {
+function copyFile(source: fs.PathLike, target: fs.PathLike, cb: Function) {
     let cbCalled = false;
 
-    function done(err?) {
+    function done(err?: Error) {
         if (!cbCalled) {
             cb(err);
             cbCalled = true;
@@ -31,23 +32,22 @@ function copyFile(source, target, cb) {
     }
 
     let rd = fs.createReadStream(source);
-    rd.on('error', function(err) {
+    rd.on('error', function (err) {
         done(err);
     });
     let wr = fs.createWriteStream(target);
-    wr.on('error', function(err) {
+    wr.on('error', function (err) {
         done(err);
     });
-    wr.on('close', function(ex) {
+    wr.on('close', function () {
         done();
     });
     rd.pipe(wr);
 
 }
 
-function checkIfProjectOpen(callback) {
+function checkIfProjectOpen(callback: Function) {
     let root: string = vscode.workspace.rootPath;
-    let fileFound: boolean = false;
     if (root === undefined) {
         vscode.window.showErrorMessage('Open project folder first');
     }
@@ -79,7 +79,7 @@ export function activate(context: vscode.ExtensionContext) {
             let taskPath = path.join(vscode.workspace.rootPath, '.vscode');
 
             function copyTaskFile(destination: string) {
-                copyFile(pdeTaskFile, destination, function(err) {
+                copyFile(pdeTaskFile, destination, function(err: Error) {
                     if (err) {
                         return console.log(err);
                     }
@@ -138,7 +138,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(run_task_file);
 
     let open_documentation = vscode.commands.registerCommand('extension.processingOpenDocumentation', () => {
-        open('https://github.com/TobiahZ/processing-vscode#processing-for-visual-studio-code');
+        opn('https://github.com/TobiahZ/processing-vscode#processing-for-visual-studio-code');
     });
     context.subscriptions.push(open_documentation);
 }

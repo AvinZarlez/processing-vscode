@@ -76,6 +76,15 @@ This is just a shortcut for running the `.vscode/tasks.json` file. Same as press
 
 Opens this documentation.
 
+### Command: Open Documentation for Selection
+
+Use the pallet command "Processing: Open Documentation for Selection" to open the processing documentation for the current selection.
+
+### Command: Search Processing Website
+
+Use the pallet command "Processing: Search Processing Website" to quickly search whatever you want on the processing website.
+
+
 ## Requirements
 
 Installing the extension will give you instant access to [syntax highlighting](#syntax-highlighting) and [snippets](#snippets).

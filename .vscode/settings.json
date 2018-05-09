@@ -12,5 +12,8 @@
     "cSpell.words": [
         "processing's",
         "sysdm"
-    ]
+    ],
+    "cSpell.ignorePaths": [
+        "snippets"
+    ],
 }

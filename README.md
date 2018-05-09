@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/TobiahZ/processing-vscode.svg?branch=master)](https://travis-ci.org/TobiahZ/processing-vscode) [![Dependency Status](https://dependencyci.com/github/TobiahZ/processing-vscode/badge)](https://dependencyci.com/github/TobiahZ/processing-vscode)
 
+[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version/Tobiah.language-pde.svg)](https://marketplace.visualstudio.com/items?itemName=Tobiah.language-pde)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/Tobiah.language-pde.svg)](https://marketplace.visualstudio.com/items?itemName=Tobiah.language-pde)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/Tobiah.language-pde.svg)](https://marketplace.visualstudio.com/items?itemName=Tobiah.language-pde)
+
 ## What this extension is
 
 This is a Visual Studio Code extension created by Tobiah Zarlez to add Processing language support.

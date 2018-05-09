@@ -5,7 +5,7 @@
   "version": "0.2.2",
   "publisher": "Tobiah",
   "engines": {
-    "vscode": "^1.20.0"
+    "vscode": "^1.23.0"
   },
   "homepage": "https://github.com/TobiahZ/processing-vscode",
   "repository": {
@@ -13,7 +13,7 @@
     "url": "https://github.com/TobiahZ/processing-vscode.git"
   },
   "categories": [
-    "Languages",
+    "Programming Languages",
     "Snippets"
   ],
   "bugs": "https://github.com/TobiahZ/processing-vscode/issues",
@@ -30,7 +30,7 @@
     "onCommand:extension.processingRunTaskFile",
     "onCommand:extension.processingOpenDocumentation"
   ],
-  "main": "./out/src/extension",
+  "main": "./out/extension",
   "contributes": {
     "commands": [
       {
@@ -84,16 +84,14 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
-    "@types/node": "^7.0.43",
-    "@types/mocha": "^2.2.42",
-    "@types/open": "0.0.29",
-    "mocha": "^2.3.3",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.1"
+    "@types/node": "^10.0.6",
+    "@types/mocha": "^2.2.42"
   },
   "dependencies": {
-    "open": "^0.0.5",
-    "vscode": "^1.1.6"
+    "opn": "^5.3.0"
   },
   "icon": "processing.png"
 }

@@ -8,7 +8,7 @@ import {
     processingTaskFilename
 } from './processing-tasks';
 
-const open = require('open');
+const opn = require('opn');
 
 
 function remindAddToPath() {

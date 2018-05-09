@@ -65,6 +65,14 @@ function checkIfProjectOpen(callback: Function) {
     });
 }
 
+function openDocErrorMessage(str: string) {
+	return vscode.window.showErrorMessage('Error: ' + str, 'Open Docs').then((item: string | undefined) => {
+		if (item === 'Open Docs') {
+			search.openURL('docs');
+		}
+	});
+}
+
 export function activate(context: vscode.ExtensionContext) {
 
     console.log('Processing language extension is now active!');
@@ -77,7 +85,7 @@ export function activate(context: vscode.ExtensionContext) {
             let taskPath = path.join(root.uri.fsPath, '.vscode');
 
             function copyTaskFile(destination: string) {
-                copyFile(pdeTaskFile, destination, function(err: Error) {
+                copyFile(pdeTaskFile, destination, function (err: Error) {
                     if (err) {
                         return console.log(err);
                     }
@@ -138,6 +146,48 @@ export function activate(context: vscode.ExtensionContext) {
         search.openURL('https://github.com/TobiahZ/processing-vscode#processing-for-visual-studio-code');
     });
     context.subscriptions.push(open_documentation);
+
+
+    // Open Processing Documentation, when you already have something you want to search selected
+    let open_docs = vscode.commands.registerTextEditorCommand('processing.OpenDocs',
+        (textEditor: vscode.TextEditor, edit: vscode.TextEditorEdit) => {
+
+            // selection[0] is the start, and selection[1] is the end
+            let selection = textEditor.selection;
+            if (!selection.isSingleLine) {
+                openDocErrorMessage('Multiple lines selected, please just select a class or function.');
+                return;
+            }
+
+            let range = undefined;
+            if (!selection.isEmpty) {
+                // selection is not empty, get text from it
+                range = new vscode.Range(selection.start, selection.end);
+            } else {
+                // selection is empty, get any word at cursor
+                range = textEditor.document.getWordRangeAtPosition(selection.active);
+            }
+
+            if (range === undefined) {
+                openDocErrorMessage('Nothing is selected. Please select a class, or use \"Search Documentation\" instead!');
+                return;
+            }
+
+            search.openProcessingDocs(textEditor.document.lineAt(range.start.line).text, range.start.character, range.end.character);
+        });
+    context.subscriptions.push(open_docs);
+
+    let searchUnityDocs = vscode.commands.registerCommand('processing.SearchWebsite', () => {
+        vscode.window.showInputBox({
+            prompt: 'Search Processing Website:'
+        }).then((result: string | undefined) => {
+            if (result !== undefined) {
+                // Use the node module "open" to open a web browser
+                search.openURL('docs', result);
+            }
+        });
+    });
+    context.subscriptions.push(searchUnityDocs);
 }
 
 // this method is called when your extension is deactivated

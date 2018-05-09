@@ -30,9 +30,8 @@
     "onCommand:processing.CreateTaskFile",
     "onCommand:processing.RunTaskFile",
     "onCommand:processing.OpenExtensionDocumentation",
-    "onCommand:extension.processingCreateTaskFile",
-    "onCommand:extension.processingRunTaskFile",
-    "onCommand:extension.processingOpenDocumentation"
+    "onCommand:processing.OpenDocs",
+    "onCommand:processing.SearchWebsite"
   ],
   "main": "./out/extension",
   "contributes": {
@@ -48,6 +47,14 @@
       {
         "command": "processing.OpenExtensionDocumentation",
         "title": "Processing: Open Extension Documentation"
+      },
+      {
+        "command": "processing.OpenDocs",
+        "title": "Processing: Open Documentation for Selection"
+      },
+      {
+        "command": "processing.SearchWebsite",
+        "title": "Processing: Search Processing Website"
       }
     ],
     "languages": [
@@ -76,7 +83,16 @@
         "language": "pde",
         "path": "./snippets/snippets.json"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection && editorLangId == 'pde'",
+          "command": "processing.OpenDocs",
+          "group": "navigation@1"
+        }
+      ]
+    }
   },
   "scripts": {
     "postinstall": "node ./node_modules/vscode/bin/install",

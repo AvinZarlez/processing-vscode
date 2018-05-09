@@ -2,10 +2,10 @@
   "name": "language-pde",
   "displayName": "Processing Language",
   "description": "Processing Language Support for VSCode",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "publisher": "Tobiah",
   "engines": {
-    "vscode": "^0.10.8"
+    "vscode": "^1.23.0"
   },
   "homepage": "https://github.com/TobiahZ/processing-vscode",
   "repository": {
@@ -13,7 +13,7 @@
     "url": "https://github.com/TobiahZ/processing-vscode.git"
   },
   "categories": [
-    "Languages",
+    "Programming Languages",
     "Snippets"
   ],
   "bugs": "https://github.com/TobiahZ/processing-vscode/issues",
@@ -23,14 +23,15 @@
     "pde",
     "language",
     "snippets",
-    "java"
+    "java",
+    "multi-root ready"
   ],
   "activationEvents": [
     "onCommand:extension.processingCreateTaskFile",
     "onCommand:extension.processingRunTaskFile",
     "onCommand:extension.processingOpenDocumentation"
   ],
-  "main": "./out/src/extension",
+  "main": "./out/extension",
   "contributes": {
     "commands": [
       {
@@ -76,17 +77,22 @@
   },
   "scripts": {
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-    "pretest": "tsc",
-    "test": "mocha --ui tdd ./out/test/extension.test.js"
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test",
+    "lint": "tslint ./src/**/*.ts ./test/**/*.ts",
+    "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
-    "typescript": "^1.7.5"
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "tslint": "^5.8.0",
+    "@types/node": "^10.0.6",
+    "@types/mocha": "^2.2.42"
   },
   "dependencies": {
-    "open": "^0.0.5",
-    "vscode": "^0.11.x"
+    "opn": "^5.3.0"
   },
   "icon": "processing.png"
 }

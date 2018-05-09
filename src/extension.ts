@@ -47,24 +47,23 @@ function copyFile(source: fs.PathLike, target: fs.PathLike, cb: Function) {
 }
 
 function checkIfProjectOpen(callback: Function) {
-    let root: string = vscode.workspace.rootPath;
-    if (root === undefined) {
-        vscode.window.showErrorMessage('Open project folder first');
-    }
-    else {
-        let name: string = root.replace(/^.*[\\\/]/, '');
-        fs.stat(root + '/' + name + '.pde', (err, stats) => {
-            if (err && err.code === 'ENOENT') {
-                // Named file doesn't exist.
-                vscode.window.showErrorMessage('Create a ' + name + '.pde file first!');
-            } else if (err) {
-                vscode.window.showErrorMessage('When checking if ' + name + '.pde exists: ' + err);
-            } else if (stats.isFile()) {
-                callback();
-            }
-        });
-    }
-
+    vscode.window.showWorkspaceFolderPick().then((root: vscode.WorkspaceFolder | undefined) => {
+        if (root === undefined) {
+            vscode.window.showErrorMessage('Open project folder first');
+        }
+        else {
+            fs.stat(root.uri.fsPath + '/' + root.name + '.pde', (err, stats) => {
+                if (err && err.code === 'ENOENT') {
+                    // Named file doesn't exist.
+                    vscode.window.showErrorMessage('Create a ' + root.name + '.pde file first!');
+                } else if (err) {
+                    vscode.window.showErrorMessage('When checking if ' + root.name + '.pde exists: ' + err);
+                } else if (stats.isFile()) {
+                    callback(root);
+                }
+            });
+        }
+    });
 }
 
 export function activate(context: vscode.ExtensionContext) {
@@ -75,8 +74,8 @@ export function activate(context: vscode.ExtensionContext) {
 
         const pdeTaskFile = path.join(context.extensionPath, processingTaskFilename);
 
-        checkIfProjectOpen(() => {
-            let taskPath = path.join(vscode.workspace.rootPath, '.vscode');
+        checkIfProjectOpen((root: vscode.WorkspaceFolder) => {
+            let taskPath = path.join(root.uri.fsPath, '.vscode');
 
             function copyTaskFile(destination: string) {
                 copyFile(pdeTaskFile, destination, function(err: Error) {
@@ -122,10 +121,9 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(create_task_file);
 
-    const root = vscode.workspace.rootPath;
     let run_task_file = vscode.commands.registerCommand('extension.processingRunTaskFile', () => {
-        checkIfProjectOpen(() => {
-            const cmd = `${processingCommand} ${buildProcessingArgs(root).join(' ')}`;
+        checkIfProjectOpen((root: vscode.WorkspaceFolder) => {
+            const cmd = `${processingCommand} ${buildProcessingArgs(root.uri.fsPath).join(' ')}`;
             child_process.exec(cmd, (err, stdout, stderr) => {
                 if (err) {
                     console.error(err);

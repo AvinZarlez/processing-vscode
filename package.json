@@ -23,7 +23,8 @@
     "pde",
     "language",
     "snippets",
-    "java"
+    "java",
+    "multi-root ready"
   ],
   "activationEvents": [
     "onCommand:extension.processingCreateTaskFile",

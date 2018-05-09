@@ -5,6 +5,7 @@
 ### Added
 
 - Added Changelog
+- Support for multi root workplaces
 
 ### Fixed
 

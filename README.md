@@ -37,32 +37,15 @@ Once the language has been set, you will see code snippets pop up automatically 
 
 ### Command: Create Task File
 
-Adds the following `.vscode/tasks.json` file to your project folder:
-
-```json
-{
-    "version": "0.1.0",
-    "command": "processing-java",
-    "isShellCommand": true,
-    "showOutput": "never",
-    "args": [
-        "--force",
-        "--sketch=${workspaceRoot}",
-        "--output=${workspaceRoot}\\out",
-        "--run"
-    ]
-}
-```
+Adds a `.vscode/tasks.json` file to your project folder, that has the contents of the `ProcessingTasks.json` located in the root folder of this project.
 
 When you run this task (Keyboard shortcut: `Ctrl+Shift+B`), it will compile and run your project!
 
 If you would like to see output from the compiler, simply comment out the line `"showOutput": "never",`
 
-**NOTE:** Processing must be added to your path
+**NOTE:** Processing must be added to your path, or you must set the "processing.path" setting!
 
-Follow [these instructions](#add-processing-to-path) to add Processing to your path.
-
-If you do not wish to do so, you could follow these [alternate instructions](#alternate-method) instead to modify this task.
+Follow [these instructions](#add-processing-to-path) to add Processing to your path, or these [alternate instructions](#alternate-method) instead to modify the path setting.
 
 See "[Requirements](#requirements)" for full details.
 
@@ -97,7 +80,7 @@ However, in order to compile and run your processing project from Visual Studio 
 
 ## Add Processing to path
 
-In order to automatically compile and open from Visual Studio Code, you will need to be able to access Processing from your path.
+In order to automatically compile and open from Visual Studio Code, I recommend adding Processing to your path.
 
 ### What does that mean?
 
@@ -140,16 +123,16 @@ See the command "[Create Task File](#command-create-task-file)"
 
 What if you cannot, or do not want to add Processing to your path?
 
-Simply modify the `.vscode/tasks.json` file to go directly to wherever Processing is installed.
+Simply modify the `processing.path` setting to follow the path to wherever processing is installed on your machine. Be sure to remember to keep the `processing-java` at the end of the path!
 
-Find the `"command"` entry, and append your installation path to the beginning of `processing-java`.
+To change settings in VSCode, here is a link to the [official documentation](https://code.visualstudio.com/docs/getstarted/settings).
 
-(Be sure to turn any "`\`" into "`\\`"!)
+(Remember, for Windows be sure to turn any "`\`" into "`\\`"!)
 
 Example:
 
 ```json
-    "command": "C:\\Program Files\\processing-3.0.1\\processing-java",
+    "processing.path": "C:\\Program Files\\processing-3.0.1\\processing-java",
 ```
 
 **NOTE:** This is untested on Mac and Linux

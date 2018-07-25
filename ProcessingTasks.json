@@ -8,7 +8,7 @@
         "kind": "build",
         "isDefault": true
       },
-      "command": "processing-java",
+      "command": "${config:processing.path}",
       "presentation": {
         "echo": true,
         "reveal": "always",

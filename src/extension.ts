@@ -12,7 +12,7 @@ import * as search from './search';
 
 
 function remindAddToPath() {
-    return vscode.window.showInformationMessage('Remember to add Processing to your path!', 'Learn More').then((item) => {
+    return vscode.window.showInformationMessage('Remember to add Processing to your path!', 'Learn More').then((item: string | undefined) => {
         if (item === 'Learn More') {
             // Open a URL using the npm module "open"
             search.openURL('https://github.com/TobiahZ/processing-vscode#add-processing-to-path');
@@ -66,11 +66,11 @@ function checkIfProjectOpen(callback: Function) {
 }
 
 function openDocErrorMessage(str: string) {
-	return vscode.window.showErrorMessage('Error: ' + str, 'Open Docs').then((item: string | undefined) => {
-		if (item === 'Open Docs') {
-			search.openURL('docs');
-		}
-	});
+    return vscode.window.showErrorMessage('Error: ' + str, 'Open Docs').then((item: string | undefined) => {
+        if (item === 'Open Docs') {
+            search.openURL('docs');
+        }
+    });
 }
 
 export function activate(context: vscode.ExtensionContext) {
@@ -115,7 +115,7 @@ export function activate(context: vscode.ExtensionContext) {
                         } else if (err) {
                             vscode.window.showErrorMessage('When checking if tasks.json exists: ' + err);
                         } else if (stats.isFile()) {
-                            return vscode.window.showErrorMessage('tasks.json already exists. Overwrite it?', 'Yes').then((item) => {
+                            return vscode.window.showErrorMessage('tasks.json already exists. Overwrite it?', 'Yes').then((item: string | undefined) => {
                                 if (item === 'Yes') {
                                     copyTaskFile(taskPath);
                                 }

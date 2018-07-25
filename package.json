@@ -92,22 +92,31 @@
           "group": "navigation@1"
         }
       ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Processing configuration",
+      "properties": {
+        "processing.path": {
+          "type": "string",
+          "default": "processing-java",
+          "description": "Path to Processing. Leave default if you've added processing to your path, otherwise enter the path to processing-java here. Example: 'C:\\Program Files\\processing-3.0.1\\processing-java' for Windows"
+        }
+      }
     }
   },
   "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install",
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "test": "npm run compile && node ./node_modules/vscode/bin/test",
-    "lint": "tslint ./src/**/*.ts ./test/**/*.ts",
-    "lint:fix": "npm run lint -- --fix"
-  },
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+},
   "devDependencies": {
     "typescript": "^2.6.1",
     "vscode": "^1.1.6",
     "tslint": "^5.8.0",
-    "@types/node": "^10.0.6",
+    "@types/node": "^7.0.43",
     "@types/mocha": "^2.2.42"
   },
   "dependencies": {

@@ -31,11 +31,11 @@ function copyFile(source: fs.PathLike, target: fs.PathLike, cb: Function) {
     }
 
     let rd = fs.createReadStream(source);
-    rd.on('error', function (err) {
+    rd.on('error', function (err: Error) {
         done(err);
     });
     let wr = fs.createWriteStream(target);
-    wr.on('error', function (err) {
+    wr.on('error', function (err: Error) {
         done(err);
     });
     wr.on('close', function () {

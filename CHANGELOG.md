@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.2] - 2018-07-25
+
+### Added
+
+- Added path setting
+
 ## [1.1.0] - 2018-05-09
 
 ### Added

@@ -65,8 +65,7 @@
           "pde"
         ],
         "extensions": [
-          ".pde",
-          ".java"
+          ".pde"
         ],
         "configuration": "./pde.configuration.json"
       }

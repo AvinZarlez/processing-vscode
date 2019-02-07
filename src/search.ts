@@ -1,15 +1,14 @@
 let processingDocs = 'https://processing.org/reference/';
 let processingSearch = 'https://www.google.com/search?as_sitesearch=processing.org&as_q=';
 
-// Open a URL using the npm module "opn"
-let opn = require('opn');
+import * as vscode from 'vscode';
 
-export function openURL(search_base?: string, s?: string) {
-	if (search_base === 'open') { opn(s); } else {
+export async function openURL(search_base?: string, s?: string) {
+	if (search_base === 'open') { await vscode.env.openExternal(vscode.Uri.parse(s as string)); } else {
 		if (!s) { s = processingDocs; }
 		else { s = processingSearch + s; }
 
-		opn(s);
+		await vscode.env.openExternal(vscode.Uri.parse(s));
 	}
 	return true;
 }

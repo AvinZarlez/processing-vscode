@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3] - 2018-07-25
+
+### Removed
+
+- Removed the opn requirement, using new internal open external API
+
+### Fixed
+
+- Updated package.json requirements
+
 ## [1.2.2] - 2018-07-25
 
 ### Added

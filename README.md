@@ -1,3 +1,14 @@
+# Forked Project
+
+Only difference from the original is a few extra lines in the ProcessingTask.json as a work around for a known bug in vscode when using git-bash on windows. The work around specifies that the vscode task should be run in cmd on windows.
+
+If you're having the same problem feel free to use. To install,
+1. Clone repo
+2. run `npm i`
+3. run `npm i -g vsce`
+4. run `vsce`
+5. Bring up command pallet in vs code (cnrl + shift + P) and run `Extensions: Install from VSIX...` then navigate to cloned repo and .vsix should be there.
+
 # Processing for Visual Studio Code
 
 [![Build Status](https://travis-ci.org/TobiahZ/processing-vscode.svg?branch=master)](https://travis-ci.org/TobiahZ/processing-vscode) [![Dependency Status](https://dependencyci.com/github/TobiahZ/processing-vscode/badge)](https://dependencyci.com/github/TobiahZ/processing-vscode)

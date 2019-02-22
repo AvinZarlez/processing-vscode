@@ -28,6 +28,14 @@
           "--output=${workspaceRoot}\\out",
           "--run"
         ]
+      },
+      "options": {
+        "shell": {
+          "executable": "cmd.exe",
+          "args": [
+            "/d", "/c"
+          ]
+        }
       }
     }
   ]

@@ -112,11 +112,11 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "^3.2.4",
-    "vscode": "^1.1.28",
-    "tslint": "^5.11.1",
-    "@types/node": "^10.12.21",
-    "@types/mocha": "^2.2.42"
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^10.14.8",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1",
+    "vscode": "^1.1.34"
   },
   "icon": "processing.png"
 }

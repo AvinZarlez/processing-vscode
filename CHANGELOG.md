@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.1] - 2019-06-05
+
+### Fixed
+
+- Updated NPM packages
+
 ## [1.3] - 2019-02-06
 
 ### Removed

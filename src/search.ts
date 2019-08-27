@@ -1,5 +1,5 @@
-let processingDocs = 'https://processing.org/reference/';
-let processingSearch = 'https://www.google.com/search?as_sitesearch=processing.org&as_q=';
+let processingDocs = 'https://p5js.org/reference/#/p5/';
+let processingSearch = 'https://p5js.org/reference/#/p5/';
 
 import * as vscode from 'vscode';
 

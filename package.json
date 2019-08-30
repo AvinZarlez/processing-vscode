@@ -117,7 +117,7 @@
         },
         "processing.docsURL": {
           "type": "string",
-          "default": "https://p5js.org/reference/#/p5/",
+          "default": "",
           "description": "URL to Processing documentation; unused unless specifically selected in the processing.docs setting"
         },
         "processing.search": {
@@ -136,7 +136,7 @@
         },
         "processing.searchURL": {
           "type": "string",
-          "default": "https://p5js.org/reference/#/p5/",
+          "default": "",
           "description": "URL to Processing documentation, unused unless specifically selected in the processing.search setting"
         }
       }

@@ -8,7 +8,9 @@ Updated tests from latest template to fix automatic builds.
 
 ### Added
 
-Thanks to @brianmcfadden, users can now choose between processing.org's documentation and p5js
+Users can now choose between processing.org's documentation and p5js
+
+Thanks to [@brianmcfadden](https://github.com/brianmcfadden)
 
 ## [1.3.1] - 2019-06-05
 

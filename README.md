@@ -144,7 +144,7 @@ Example:
 
 ### If needed: Overwrite default terminal
 
-Pointed out by @WissenIstNacht and @micuat, you may need to also overwrite your default terminal in order to get your task file to run correctly.
+You may need to also overwrite your default terminal in order to get your task file to run correctly.
 
 Following [the instructions on the official VSCode documentation](https://code.visualstudio.com/docs/editor/tasks#_common-questions), all you have to do is add a few extra lines to your task file once you generate it.
 

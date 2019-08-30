@@ -94,12 +94,50 @@
     },
     "configuration": {
       "type": "object",
-      "title": "Processing configuration",
+      "title": "Processing",
       "properties": {
         "processing.path": {
           "type": "string",
           "default": "processing-java",
           "description": "Path to Processing. Leave default if you've added processing to your path, otherwise enter the path to processing-java here. Example: 'C:\\Program Files\\processing-3.0.1\\processing-java' for Windows"
+        },
+        "processing.docs": {
+          "type": "string",
+          "default": "https://p5js.org/reference/#/p5/",
+          "enum": [
+            "https://p5js.org/reference/#/p5/",
+            "https://processing.org/reference/",
+            "other"
+          ],
+          "enumDescriptions": [
+            "Use p5js documentation",
+            "Use processing.org documentation",
+            "Use the URL given by the processing.docsURL setting"
+          ]
+        },
+        "processing.docsURL": {
+          "type": "string",
+          "default": "",
+          "description": "URL to Processing documentation; unused unless specifically selected in the processing.docs setting"
+        },
+        "processing.search": {
+          "type": "string",
+          "default": "https://p5js.org/reference/#/p5/",
+          "enum": [
+            "https://p5js.org/reference/#/p5/",
+            "https://www.google.com/search?as_sitesearch=processing.org&as_q=",
+            "other"
+          ],
+          "enumDescriptions": [
+            "Use p5js documentation for selections",
+            "Use processing.org documentation for selections via the Googleses",
+            "Use the URL given by the processing.searchURL setting"
+          ]
+        },
+        "processing.searchURL": {
+          "type": "string",
+          "default": "",
+          "description": "URL to Processing documentation, unused unless specifically selected in the processing.search setting"
         }
       }
     }

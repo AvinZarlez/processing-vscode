@@ -1,9 +1,16 @@
-let processingDocs = 'https://p5js.org/reference/#/p5/';
-let processingSearch = 'https://p5js.org/reference/#/p5/';
-
 import * as vscode from 'vscode';
 
 export async function openURL(search_base?: string, s?: string) {
+	const config = vscode.workspace.getConfiguration('processing');
+	let processingDocs = String(config.get('docs'));
+	if (processingDocs === 'other') {
+		processingDocs = String(config.get('docsURL'));
+	}
+	let processingSearch = String(config.get('search'));
+	if (processingSearch === 'other') {
+		processingSearch = String(config.get('searchURL'));
+	}
+
 	if (search_base === 'open') { await vscode.env.openExternal(vscode.Uri.parse(s as string)); } else {
 		if (!s) { s = processingDocs; }
 		else { s = processingSearch + s; }

@@ -1,19 +1,34 @@
+
+let processingorgDocs = 'https://processing.org/reference/';
+let processingorgSearch = 'https://www.google.com/search?as_sitesearch=processing.org&as_q=';
+let p5jsDocs = 'https://p5js.org/reference/';
+let p5jsSearch = 'https://www.google.com/search?as_sitesearch=p5js.org&as_q=';
+
 import * as vscode from 'vscode';
 
 export async function openURL(search_base?: string, s?: string) {
-	const config = vscode.workspace.getConfiguration('processing');
-	let processingDocs = String(config.get('docs'));
-	if (processingDocs === 'other') {
-		processingDocs = String(config.get('docsURL'));
-	}
-	let processingSearch = String(config.get('search'));
-	if (processingSearch === 'other') {
-		processingSearch = String(config.get('searchURL'));
-	}
-
 	if (search_base === 'open') { await vscode.env.openExternal(vscode.Uri.parse(s as string)); } else {
-		if (!s) { s = processingDocs; }
-		else { s = processingSearch + s; }
+		const config = vscode.workspace.getConfiguration('processing');
+		let processingDocs = String(config.get('docs'));
+
+		if (!s) {	
+			if (processingDocs === 'p5js.org') {
+				s = p5jsDocs;
+			}
+			else
+			{
+				s = processingorgDocs;
+			}
+		}
+		else {
+			if (processingDocs === 'p5js.org') {
+				s = p5jsSearch + s;
+			}
+			else
+			{
+				s = processingorgSearch + s;
+			}
+		}
 
 		await vscode.env.openExternal(vscode.Uri.parse(s));
 	}

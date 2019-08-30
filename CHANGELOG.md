@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.0] - 2019-08-30
+
+### Fixed
+
+Updated tests from latest template to fix automatic builds.
+
 ## [1.3.1] - 2019-06-05
 
 ### Fixed

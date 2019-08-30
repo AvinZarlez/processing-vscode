@@ -59,14 +59,19 @@ This is just a shortcut for running the `.vscode/tasks.json` file. Same as press
 
 Opens this documentation.
 
+By default uses processing.org's documentation. Can change to p5js's if preferred using the `processing.docs` setting.
+
 ### Command: Open Documentation for Selection
 
 Use the pallet command "Processing: Open Documentation for Selection" to open the processing documentation for the current selection.
+
+By default uses processing.org's documentation. Can change to p5js's if preferred using the `processing.docs` setting.
 
 ### Command: Search Processing Website
 
 Use the pallet command "Processing: Search Processing Website" to quickly search whatever you want on the processing website.
 
+By default uses processing.org's documentation. Can change to p5js's if preferred using the `processing.docs` setting.
 
 ## Requirements
 
@@ -137,11 +142,37 @@ Example:
 
 **NOTE:** This is untested on Mac and Linux
 
+### If needed: Overwrite default terminal
+
+Pointed out by @WissenIstNacht and @micuat, you may need to also overwrite your default terminal in order to get your task file to run correctly.
+
+Following [the instructions on the official VSCode documentation](https://code.visualstudio.com/docs/editor/tasks#_common-questions), all you have to do is add a few extra lines to your task file once you generate it.
+
+For example, if you are running Windows and have path issues caused by your default terminal being bash, you can set the task file to use Command Prompt ('cmd.exe') by adding an 'options' parameter under the 'windows' portion:
+
+```json
+      "windows": {
+        "options": {
+            "shell": {
+                "executable": "cmd.exe",
+                "args": [
+                    "/d", "/c"
+                ]
+            }
+        },
+        "args": [
+          "--force",
+          "--sketch=${workspaceRoot}",
+          "--output=${workspaceRoot}\\out",
+          "--run"
+        ]
+      }
+```
+
 ## To Do List
 
 * `[Research Needed]` Debugging support
 * `[Medium Priority]` Take nice looking (Animated?) screen shots for README/Instructions
-* `[Low Priority]` Create proper Mocha tests
 
 ## Credits
 

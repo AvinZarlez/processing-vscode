@@ -99,7 +99,7 @@ export function activate(context: vscode.ExtensionContext) {
                     try {
                         fs.mkdirSync(taskPath);
                     } catch (e) {
-                        if (e.code !== 'EEXIST') throw e;
+                        if (e.code !== 'EEXIST') { throw e; }
                     }
                     copyTaskFile(path.join(taskPath, 'tasks.json'));
                 } else if (err) {

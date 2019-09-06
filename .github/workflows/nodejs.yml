@@ -6,18 +6,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        linux:
-          imageName: 'ubuntu-16.04'
-        mac:
-          imageName: 'macos-10.13'
-        windows:
-          imageName: 'vs2017-win2016'
-
-    pool:
-      vmImage: $(imageName)
       
     steps:
     - uses: actions/checkout@v1
@@ -26,7 +14,6 @@ jobs:
       with:
         node-version: ${{ '8.x' }}
     - name: Start xvfb
-      if: $(imageName) == 'ubuntu-16.04'
       run: |
         /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
         echo ">>> Started xvfb"

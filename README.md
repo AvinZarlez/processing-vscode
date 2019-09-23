@@ -35,7 +35,11 @@ Open any .pde file, or simply choose "Processing" from the drop down menu in the
 
 Once the language has been set, you will see code snippets pop up automatically as you type!
 
-### Command: Create Task File
+### Commands
+
+Installing this extension will add the following commands to your command pallette (`CTRL+SHIFT+P`, or opened by `View -> Command Pallette`). These commands can be selected and run from there, to complete the corresponding tasks.
+
+## Command: Create Task File
 
 Adds a `.vscode/tasks.json` file to your project folder, that has the contents of the `ProcessingTasks.json` located in the root folder of this project.
 
@@ -49,25 +53,25 @@ Follow [these instructions](#add-processing-to-path) to add Processing to your p
 
 See "[Requirements](#requirements)" for full details.
 
-### Command: Run Processing Project
+## Command: Run Processing Project
 
 This is just a shortcut for running the `.vscode/tasks.json` file. Same as pressing `Ctrl+Shift+B`
 
 **Note: Must have ran the "Create Processing Task File" command first, [see above](#command-create-task-file)!**
 
-### Command: Open Extension Documentation
+## Command: Open Extension Documentation
 
 Opens this documentation.
 
 By default uses processing.org's documentation. Can change to p5js's if preferred using the `processing.docs` setting.
 
-### Command: Open Documentation for Selection
+## Command: Open Documentation for Selection
 
 Use the pallet command "Processing: Open Documentation for Selection" to open the processing documentation for the current selection.
 
 By default uses processing.org's documentation. Can change to p5js's if preferred using the `processing.docs` setting.
 
-### Command: Search Processing Website
+## Command: Search Processing Website
 
 Use the pallet command "Processing: Search Processing Website" to quickly search whatever you want on the processing website.
 

@@ -2,7 +2,7 @@
   "name": "language-pde",
   "displayName": "Processing Language",
   "description": "Processing Language Support for VSCode",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "publisher": "Tobiah",
   "engines": {
     "vscode": "^1.37.0"

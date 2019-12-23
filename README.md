@@ -152,7 +152,7 @@ You may need to also overwrite your default terminal in order to get your task f
 
 Following [the instructions on the official VSCode documentation](https://code.visualstudio.com/docs/editor/tasks#_common-questions), all you have to do is add a few extra lines to your task file once you generate it.
 
-For example, if you are running Windows and have path issues caused by your default terminal being bash, you can set the task file to use Command Prompt ('cmd.exe') by adding an 'options' parameter under the 'windows' portion:
+For example, if you are running Windows and want the task file to use Command Prompt ('cmd.exe') you can add an 'options' parameter under the 'windows' portion:
 
 ```json
       "windows": {
@@ -164,10 +164,16 @@ For example, if you are running Windows and have path issues caused by your defa
                 ]
             }
         },
-        "args": [
+        "args":  [
           "--force",
-          "--sketch=${workspaceRoot}",
-          "--output=${workspaceRoot}\\out",
+          {
+            "value": "--sketch=${workspaceRoot}",
+            "quoting": "strong"
+          },
+          {
+            "value": "--output=${workspaceRoot}\\out",
+            "quoting": "strong"
+          },
           "--run"
         ]
       }
@@ -175,8 +181,7 @@ For example, if you are running Windows and have path issues caused by your defa
 
 ## To Do List
 
-* `[Research Needed]` Debugging support
-* `[Medium Priority]` Take nice looking (Animated?) screen shots for README/Instructions
+* Take nice looking (Animated?) screen shots for README/Instructions
 
 ## Credits
 

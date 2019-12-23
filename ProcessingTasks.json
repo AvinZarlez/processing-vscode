@@ -24,8 +24,14 @@
       "windows": {
         "args": [
           "--force",
-          "--sketch=${workspaceRoot}",
-          "--output=${workspaceRoot}\\out",
+          {
+            "value": "--sketch=${workspaceRoot}",
+            "quoting": "strong"
+          },
+          {
+            "value": "--output=${workspaceRoot}\\out",
+            "quoting": "strong"
+          },
           "--run"
         ]
       }

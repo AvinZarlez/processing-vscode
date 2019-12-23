@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.1] - 2019-12-23
+
+### Fixed
+
+Improved snippets.json thanks to work from [@jerrylususu](https://github.com/jerrylususu)
+
+Fixed Windows on Bash path issue thanks to [@micuat](https://github.com/micuat)
+
 ## [1.4.0] - 2019-08-30
 
 ### Fixed

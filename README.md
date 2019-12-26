@@ -14,7 +14,7 @@ This is a Visual Studio Code extension created by Tobiah Zarlez to add Processin
 
 This extension does not allow you to debug Java or Processing projects.
 
-### Can you add XZY feature?
+### Can you add a feature I want?
 
 Possibly! [Let us know](https://github.com/TobiahZ/processing-vscode/issues), we'd love to hear your suggestions.
 

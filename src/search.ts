@@ -1,8 +1,8 @@
 
 let processingorgDocs = 'https://processing.org/reference/';
-let processingorgSearch = 'https://www.google.com/search?as_sitesearch=processing.org&as_q=';
+let processingorgSearch = 'https://duckduckgo.com/?q=!processing+%5C';
 let p5jsDocs = 'https://p5js.org/reference/';
-let p5jsSearch = 'https://www.google.com/search?as_sitesearch=p5js.org&as_q=';
+let p5jsSearch = 'https://duckduckgo.com/?q=!p5+';
 
 import * as vscode from 'vscode';
 

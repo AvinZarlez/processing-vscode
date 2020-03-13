@@ -1005,6 +1005,12 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>(\+\=|\-\=|\*\=|\/\=)</string>
+					<key>name</key>
+					<string>keyword.operator.arithmetic-assignment.processing</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(\-|\+|\*|\/|%)</string>
 					<key>name</key>
 					<string>keyword.operator.arithmetic.processing</string>

@@ -22,6 +22,7 @@
 		"--run"
 	  ],
       "windows": {
+        "type": "process",
         "args": [
           "--force",
           {

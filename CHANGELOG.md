@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.4] - 2020-08-25
+
+### Added
+
+Can now use DuckDuckGo or Google to search. Thanks to [@atnbueno](https://github.com/atnbueno)
+
+## [1.4.3] - 2020-08-25
+
+### Fixed
+
+Merged in bugfix PRs from [@hysysk](https://github.com/hysysk) and [@atnbueno](https://github.com/atnbueno)
+
+Updated dependencies
+
 ## [1.4.1] - 2019-12-23
 
 ### Fixed

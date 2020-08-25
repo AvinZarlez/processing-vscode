@@ -113,6 +113,19 @@
             "Use p5js for documentation"
           ],
           "description": "Which documentation should this extension use?"
+        },
+        "processing.search": {
+          "type": "string",
+          "default": "Google",
+          "enum": [
+            "Google",
+            "DuckDuckGo"
+          ],
+          "enumDescriptions": [
+            "Use Google to search documentation",
+            "Use DuckDuckGo to search documentation"
+          ],
+          "description": "Which search engine should this extension use?"
         }
       }
     }

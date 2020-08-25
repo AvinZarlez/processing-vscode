@@ -77,6 +77,8 @@ Use the pallet command "Processing: Search Processing Website" to quickly search
 
 By default uses processing.org's documentation. Can change to p5js's if preferred using the `processing.docs` setting.
 
+By default uses Google for search. Can change to DuckDuckGo if preferred using the `processing.search` setting.
+
 ## Requirements
 
 Installing the extension will give you instant access to [syntax highlighting](#syntax-highlighting) and [snippets](#snippets).

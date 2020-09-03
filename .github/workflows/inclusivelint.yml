@@ -1,4 +1,4 @@
-name: Inclusive check on ${{ github.ref }}
+name: Inclusive check
 
 on:
   workflow_dispatch:
@@ -22,7 +22,7 @@ jobs:
         mkdir ~/.inclusivelint
         wget https://github.com/inclusivelint/inclusivelint/releases/download/${{ github.event.inputs.version }}/outputRelation.txt -O- | tr -d '\r' >outputRelation.txt
         sudo mv outputRelation.txt ~/.inclusivelint
-    - name: Run inclusive linter
+    - name: Run inclusive linter on ${{ github.ref }}
       run: |
         export TERM=xterm
         inclusivelint .

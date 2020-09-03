@@ -2,6 +2,11 @@ name: Inclusive check
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version Number'
+        required: true
+        default: '0.0.3'
 
 jobs:
   inclusivelint:
@@ -12,13 +17,11 @@ jobs:
 
     - name: Install inclusive linter
       run: |
-        wget https://github.com/fernandoBRS/inclusive-linter/releases/download/$VERSION/inclusivelint -O- | tr -d '\r' >inclusivelint
+        wget https://github.com/fernandoBRS/inclusive-linter/releases/download/${{ github.event.inputs.version }}/inclusivelint -O- | tr -d '\r' >inclusivelint
         sudo chmod +x inclusivelint && sudo mv inclusivelint /usr/bin
         mkdir ~/.inclusivelint
-        wget https://github.com/fernandoBRS/inclusive-linter/releases/download/$VERSION/outputRelation.txt -O- | tr -d '\r' >outputRelation.txt
+        wget https://github.com/fernandoBRS/inclusive-linter/releases/download/${{ github.event.inputs.version }}/outputRelation.txt -O- | tr -d '\r' >outputRelation.txt
         sudo mv outputRelation.txt ~/.inclusivelint
-      env:
-        VERSION: 0.0.2
     - name: Run inclusive linter
       run: |
         export TERM=xterm

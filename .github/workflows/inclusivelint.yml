@@ -12,10 +12,10 @@ jobs:
 
     - name: Install inclusive linter
       run: |
-        wget https://github.com/fernandoBRS/inclusive-linter/releases/download/$VERSION/inclusivelint
+        wget https://github.com/fernandoBRS/inclusive-linter/releases/download/$VERSION/inclusivelint -O- | tr -d '\r' >inclusivelint
         sudo chmod +x inclusivelint && sudo mv inclusivelint /usr/bin
         mkdir ~/.inclusivelint
-        wget https://github.com/fernandoBRS/inclusive-linter/releases/download/$VERSION/outputRelation.txt
+        wget https://github.com/fernandoBRS/inclusive-linter/releases/download/$VERSION/outputRelation.txt -O- | tr -d '\r' >outputRelation.txt
         sudo mv outputRelation.txt ~/.inclusivelint
       env:
         VERSION: 0.0.2

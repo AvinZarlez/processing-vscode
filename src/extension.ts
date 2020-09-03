@@ -155,7 +155,7 @@ export function activate(context: vscode.ExtensionContext) {
             // selection[0] is the start, and selection[1] is the end
             let selection = textEditor.selection;
             if (!selection.isSingleLine) {
-                openDocErrorMessage('Multiple lines selected, please just select a class or function.');
+                openDocErrorMessage('Multiple lines selected, please select a class or function.');
                 return;
             }
 

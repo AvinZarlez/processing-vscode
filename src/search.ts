@@ -53,7 +53,7 @@ export function prepareInput(input: string, start: number, end: number) {
 
 	if (start >= end) { return ''; }
 
-	// Slice to just the selection
+	// Slice to the selection
 	input = input.slice(start, end);
 
 	// Trim white space

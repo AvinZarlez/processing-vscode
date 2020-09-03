@@ -1147,7 +1147,7 @@
 							<key>begin</key>
 							<string>&lt;</string>
 							<key>comment</key>
-							<string>This is just to support &lt;&gt;'s with no actual type prefix</string>
+							<string>This is to support &lt;&gt;'s with no actual type prefix</string>
 							<key>end</key>
 							<string>&gt;|[^\w\s,\[\]&lt;]</string>
 							<key>name</key>
@@ -1216,7 +1216,7 @@
 							<key>begin</key>
 							<string>&lt;</string>
 							<key>comment</key>
-							<string>This is just to support &lt;&gt;'s with no actual type prefix</string>
+							<string>This is to support &lt;&gt;'s with no actual type prefix</string>
 							<key>end</key>
 							<string>&gt;|[^\w\s,&lt;]</string>
 							<key>name</key>

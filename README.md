@@ -29,7 +29,7 @@ Possibly! [Let us know](https://github.com/TobiahZ/processing-vscode/issues), we
 
 ### Syntax highlighting
 
-Open any .pde file, or simply choose "Processing" from the drop down menu in the bottom right corner.
+Open any .pde file, or choose "Processing" from the drop down menu in the bottom right corner.
 
 ### Snippets
 
@@ -45,7 +45,7 @@ Adds a `.vscode/tasks.json` file to your project folder, that has the contents o
 
 When you run this task (Keyboard shortcut: `Ctrl+Shift+B`), it will compile and run your project!
 
-If you would like to see output from the compiler, simply comment out the line `"showOutput": "never",`
+If you would like to see output from the compiler, comment out the line `"showOutput": "never",`
 
 **NOTE:** Processing must be added to your path, or you must set the "processing.path" setting!
 
@@ -55,7 +55,7 @@ See "[Requirements](#requirements)" for full details.
 
 ## Command: Run Processing Project
 
-This is just a shortcut for running the `.vscode/tasks.json` file. Same as pressing `Ctrl+Shift+B`
+This is a shortcut for running the `.vscode/tasks.json` file. Same as pressing `Ctrl+Shift+B`
 
 **Note: Must have ran the "Create Processing Task File" command first, [see above](#command-create-task-file)!**
 
@@ -126,7 +126,7 @@ Example: `sudo ln -s /opt/processing/processing-java /bin/processing-java`
 
 ### Then what?
 
-Once you've installed Processing to your path, you just need to add the appropriate `.vscode/tasks.json` file to every Processing project.
+Once you've installed Processing to your path, you need to add the appropriate `.vscode/tasks.json` file to every Processing project.
 
 See the command "[Create Task File](#command-create-task-file)"
 
@@ -134,7 +134,7 @@ See the command "[Create Task File](#command-create-task-file)"
 
 What if you cannot, or do not want to add Processing to your path?
 
-Simply modify the `processing.path` setting to follow the path to wherever processing is installed on your machine. Be sure to remember to keep the `processing-java` at the end of the path!
+You can modify the `processing.path` setting to follow the path to wherever processing is installed on your machine. Be sure to remember to keep the `processing-java` at the end of the path!
 
 To change settings in VSCode, here is a link to the [official documentation](https://code.visualstudio.com/docs/getstarted/settings).
 

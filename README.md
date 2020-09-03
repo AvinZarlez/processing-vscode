@@ -1,6 +1,6 @@
 # Processing for Visual Studio Code
 
-[![Build Status](https://travis-ci.org/TobiahZ/processing-vscode.svg?branch=master)](https://travis-ci.org/TobiahZ/processing-vscode)
+[![.github/workflows/main.yml](https://github.com/TobiahZ/processing-vscode/workflows/.github/workflows/main.yml/badge.svg)](https://github.com/TobiahZ/processing-vscode/actions)
 
 [![Marketplace Version](https://vsmarketplacebadge.apphb.com/version/Tobiah.language-pde.svg)](https://marketplace.visualstudio.com/items?itemName=Tobiah.language-pde)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/Tobiah.language-pde.svg)](https://marketplace.visualstudio.com/items?itemName=Tobiah.language-pde)

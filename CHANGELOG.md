@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.4.6] - 2020-09-03
+
+### Fixed
+
+- Updated markdown files
+
+## [1.4.5] - 2020-09-03
+
+### Fixed
+
+- Updated packages
+
+### Changed
+
+- Using GitHub Actions instead of Travis
+
 ## [1.4.4] - 2020-08-25
 
 ### Added

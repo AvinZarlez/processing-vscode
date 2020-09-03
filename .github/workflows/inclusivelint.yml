@@ -16,7 +16,7 @@ jobs:
         sudo chmod +x inclusivelint && sudo mv inclusivelint /usr/bin
         mdkir ~/.inclusivelint
         wget https://github.com/fernandoBRS/inclusive-linter/releases/download/$VERSION/outputRelation.txt
-        mv outputRelation.txt ~/.inclusivelint
+        sudo mv outputRelation.txt ~/.inclusivelint
       env:
         VERSION: 0.0.2
     - name: Run inclusive linter

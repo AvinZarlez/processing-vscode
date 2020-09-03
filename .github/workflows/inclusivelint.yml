@@ -13,7 +13,7 @@ jobs:
     - name: Install inclusive linter
       run: |
         wget https://github.com/fernandoBRS/inclusive-linter/releases/download/$VERSION/inclusivelint
-        sudo chmod +x inclusivelint && mv inclusivelint /usr/bin
+        sudo chmod +x inclusivelint && sudo mv inclusivelint /usr/bin
         mdkir ~/.inclusivelint
         wget https://github.com/fernandoBRS/inclusive-linter/releases/download/$VERSION/outputRelation.txt
         mv outputRelation.txt ~/.inclusivelint

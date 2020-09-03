@@ -1,4 +1,4 @@
-name: Inclusive check
+name: Inclusive check on ${{ github.ref }}
 
 on:
   workflow_dispatch:
@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install inclusive linter
+    - name: Install inclusive linter version ${{ github.event.inputs.version }}
       run: |
         wget https://github.com/inclusivelint/inclusivelint/releases/download/${{ github.event.inputs.version }}/inclusivelint -O- | tr -d '\r' >inclusivelint
         sudo chmod +x inclusivelint && sudo mv inclusivelint /usr/bin

@@ -1290,7 +1290,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(?:void|boolean|byte|char|short|int|float|long|double|color)(\[\])*\b</string>
+					<string>\b(?:void|boolean|byte|char|short|int|float|long|double|color|var)(\[\])*\b</string>
 					<key>name</key>
 					<string>storage.type.simple.array.processing</string>
 				</dict>
@@ -1302,7 +1302,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(?:void|boolean|byte|char|short|int|float|long|double|color)\b</string>
+					<string>\b(?:void|boolean|byte|char|short|int|float|long|double|color|var)\b</string>
 					<key>name</key>
 					<string>storage.type.simple.processing</string>
 				</dict>

@@ -147,7 +147,7 @@
     "mocha": "^10.2.0",
     "tslint": "^5.20.1",
     "typescript": "^3.9.7",
-    "vsce": "^1.103.1",
+    "vsce": "^2.15.0",
     "vscode-test": "^1.4.0"
   },
   "icon": "processing.png"

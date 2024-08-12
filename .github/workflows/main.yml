@@ -15,9 +15,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Install Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
-        node-version: 10.x
+        node-version: lts
     - run: npm install
     - name: Run tests
       uses: GabrielBB/xvfb-action@v1.2

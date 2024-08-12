@@ -17,7 +17,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: lts
+        node-version: latest
     - run: npm install
     - name: Run tests
       uses: GabrielBB/xvfb-action@v1.2

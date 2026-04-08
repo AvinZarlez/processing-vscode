@@ -33,7 +33,7 @@
     "onCommand:processing.OpenDocs",
     "onCommand:processing.SearchWebsite"
   ],
-  "main": "./out/extension",
+  "main": "./dist/extension",
   "contributes": {
     "commands": [
       {
@@ -131,24 +131,30 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile",
-    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "npm run package",
+    "compile": "node esbuild.js",
+    "package": "node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch": "node esbuild.js --watch",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile",
+    "test": "vscode-test",
     "deploy": "vsce publish"
   },
   "overrides": {
-    "serialize-javascript": "^7.0.4",
-    "diff": "^8.0.3"
+    "serialize-javascript": "^7.0.5",
+    "diff": "^8.0.3",
+    "brace-expansion": "^5.0.5",
+    "lodash": "^4.18.1"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "^20.17.0",
     "@types/vscode": "^1.95.0",
+    "@vscode/test-cli": "^0.0.12",
     "@vscode/test-electron": "^2.5.2",
     "@vscode/vsce": "^3.7.1",
-    "glob": "^11.0.0",
+    "esbuild": "^0.28.0",
     "mocha": "^11.7.5",
     "typescript": "^5.9.3"
   },
